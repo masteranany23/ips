@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Indoor Positioning - Live Tracker</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .status {
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .status.connected {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status.disconnected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .status.waiting {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .location-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .location-name {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .confidence {
+            font-size: 1.5em;
+            opacity: 0.9;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        .top3 {
+            margin-top: 20px;
+        }
+        .top3-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .rank {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .progress-bar {
+            flex-grow: 1;
+            margin: 0 15px;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+        .timestamp {
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .loading {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📍 Indoor Position Tracker</h1>
+        <div id="status" class="status waiting">Connecting to server...</div>
+        
+        <div id="locationCard" style="display: none;">
+            <div class="location-card">
+                <div class="location-name" id="locationName">--</div>
+                <div class="confidence" id="confidence">-- %</div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-value" id="matchedAps">0</div>
+                    <div class="stat-label">Matched APs</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="totalAps">0</div>
+                    <div class="stat-label">Total APs</div>
+                </div>
+            </div>
+            
+            <div class="top3">
+                <h3>Top 3 Predictions</h3>
+                <div id="top3List"></div>
+            </div>
+            
+            <div class="timestamp" id="timestamp">Last update: --</div>
+        </div>
+    </div>
+
+    <script>
+        // Configure your API URL here
+        const API_URL = 'https://YOUR_APP.onrender.com';  // Change this!
+        // For local development: const API_URL = 'http://localhost:8000';
+        
+        let ws = null;
+        let reconnectInterval = null;
+
+        function connectWebSocket() {
+            const wsUrl = API_URL.replace('https://', 'wss://').replace('http://', 'ws://');
+            ws = new WebSocket(`${wsUrl}/ws`);
+            
+            ws.onopen = () => {
+                console.log('WebSocket connected');
+                updateStatus('connected', '🟢 Connected - Waiting for ESP32 data...');
+                clearInterval(reconnectInterval);
+                
+                // Send heartbeat every 30 seconds
+                setInterval(() => {
+                    if (ws.readyState === WebSocket.OPEN) {
+                        ws.send('ping');
+                    }
+                }, 30000);
+            };
+            
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                console.log('Received prediction:', data);
+                updateUI(data);
+            };
+            
+            ws.onerror = (error) => {
+                console.error('WebSocket error:', error);
+                updateStatus('disconnected', '🔴 Connection error');
+            };
+            
+            ws.onclose = () => {
+                console.log('WebSocket disconnected');
+                updateStatus('disconnected', '🔴 Disconnected - Reconnecting...');
+                
+                // Auto-reconnect after 3 seconds
+                reconnectInterval = setInterval(() => {
+                    console.log('Attempting to reconnect...');
+                    connectWebSocket();
+                }, 3000);
+            };
+        }
+        
+        function updateStatus(type, message) {
+            const statusEl = document.getElementById('status');
+            statusEl.className = `status ${type}`;
+            statusEl.textContent = message;
+        }
+        
+        function updateUI(data) {
+            document.getElementById('locationCard').style.display = 'block';
+            document.getElementById('locationName').textContent = data.location || '--';
+            document.getElementById('confidence').textContent = `${(data.confidence * 100).toFixed(1)}%`;
+            document.getElementById('matchedAps').textContent = data.matched_aps || 0;
+            document.getElementById('totalAps').textContent = data.total_aps || 0;
+            
+            // Update top 3
+            const top3List = document.getElementById('top3List');
+            top3List.innerHTML = '';
+            (data.top3 || []).forEach((item, index) => {
+                const [location, probability] = item;
+                const div = document.createElement('div');
+                div.className = 'top3-item';
+                div.innerHTML = `
+                    <div class="rank">${index + 1}</div>
+                    <strong style="min-width: 100px; text-align: left;">${location}</strong>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${probability * 100}%"></div>
+                    </div>
+                    <span style="min-width: 50px; text-align: right;">${(probability * 100).toFixed(1)}%</span>
+                `;
+                top3List.appendChild(div);
+            });
+            
+            // Update timestamp
+            const timestamp = new Date(data.timestamp).toLocaleString();
+            document.getElementById('timestamp').textContent = `Last update: ${timestamp}`;
+            
+            updateStatus('connected', '🟢 Live - Receiving updates');
+        }
+        
+        // Fallback: Poll /latest endpoint if WebSocket not supported
+        async function pollLatest() {
+            try {
+                const response = await fetch(`${API_URL}/latest`);
+                const data = await response.json();
+                if (data.data) {
+                    updateUI(data.data);
+                }
+            } catch (error) {
+                console.error('Polling error:', error);
+            }
+        }
+        
+        // Initialize
+        if ('WebSocket' in window) {
+            connectWebSocket();
+        } else {
+            updateStatus('disconnected', '⚠️ WebSocket not supported - Using polling');
+            setInterval(pollLatest, 2000);  // Poll every 2 seconds
+        }
+    </script>
+</body>
+</html>

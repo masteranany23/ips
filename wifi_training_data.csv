@@ -1,0 +1,842 @@
+Location_Label,Burst_ID,Scan_Index,BSSID,SSID,RSSI
+p1407,burst_1764233096,1,ba:6b:ad:3a:d9:69:,TIWARI JI,-95
+p1407,burst_1764233096,1,fa:1e:a4:43:b4:47:,shayari,-56
+p1407,burst_1764233096,1,8e:1f:64:8a:a0:33:,NITD,-70
+p1407,burst_1764233096,1,92:cb:96:65:a4:d2:,Lol,-58
+p1407,burst_1764233096,1,be:f1:a3:4c:d0:39:,project,-47
+p1407,burst_1764233096,1,92:cb:96:65:a4:d2:,Lol,-58
+p1407,burst_1764233096,1,dc:ea:e7:b9:17:50:,Delhi NIT,-100
+p1407,burst_1764233096,1,dc:ea:e7:b9:16:00:,Delhi NIT,-83
+p1407,burst_1764233096,1,dc:ea:e7:b9:16:08:,Delhi NIT,-82
+p1407,burst_1764233096,1,dc:ea:e7:b9:15:50:,Delhi NIT,-98
+p1407,burst_1764233096,1,ae:0d:27:65:6f:7a:,Babblu,-55
+p1407,burst_1764233096,1,8e:1f:64:8a:a0:33:,NITD,-70
+p1407,burst_1764233096,1,be:f1:a3:4c:d0:39:,project,-47
+p1407,burst_1764233096,1,dc:ea:e7:b9:16:0b:,Delhi NIT Guest,-84
+p1407,burst_1764233096,1,ba:6b:ad:3a:d9:69:,TIWARI JI,-95
+p1407,burst_1764233096,1,ea:f3:bc:51:91:c5:,MBZ's Lap,-74
+p1407,burst_1764233096,1,66:db:66:2f:91:9e:,Infinix NOTE 50S 5G,-89
+p1407,burst_1764233096,1,50:91:e3:bd:6e:86:,TP-Link_6E86,-95
+p1407,burst_1764233096,1,fa:1e:a4:43:b4:47:,shayari,-56
+p1407,burst_1764233096,2,ba:6b:ad:3a:d9:69:,TIWARI JI,-95
+p1407,burst_1764233096,2,fa:1e:a4:43:b4:47:,shayari,-55
+p1407,burst_1764233096,2,8e:1f:64:8a:a0:33:,NITD,-70
+p1407,burst_1764233096,2,92:cb:96:65:a4:d2:,Lol,-58
+p1407,burst_1764233096,2,be:f1:a3:4c:d0:39:,project,-47
+p1407,burst_1764233096,2,fa:1e:a4:43:b4:47:,shayari,-58
+p1407,burst_1764233096,2,dc:ea:e7:b9:16:0b:,Delhi NIT Guest,-84
+p1407,burst_1764233096,2,dc:ea:e7:b9:16:08:,Delhi NIT,-82
+p1407,burst_1764233096,2,dc:ea:e7:b9:17:50:,Delhi NIT,-100
+p1407,burst_1764233096,2,dc:ea:e7:b9:15:50:,Delhi NIT,-98
+p1407,burst_1764233096,2,dc:ea:e7:b9:16:00:,Delhi NIT,-83
+p1407,burst_1764233096,2,92:cb:96:65:a4:d2:,Lol,-58
+p1407,burst_1764233096,2,ba:6b:ad:3a:d9:69:,TIWARI JI,-95
+p1407,burst_1764233096,2,ea:f3:bc:51:91:c5:,MBZ's Lap,-74
+p1407,burst_1764233096,2,ae:0d:27:65:6f:7a:,Babblu,-55
+p1407,burst_1764233096,2,66:db:66:2f:91:9e:,Infinix NOTE 50S 5G,-89
+p1407,burst_1764233096,2,50:91:e3:bd:6e:86:,TP-Link_6E86,-95
+p1407,burst_1764233096,2,8e:1f:64:8a:a0:33:,NITD,-70
+p1407,burst_1764233096,2,be:f1:a3:4c:d0:39:,project,-47
+p1407,burst_1764233096,3,ba:6b:ad:3a:d9:69:,TIWARI JI,-96
+p1407,burst_1764233096,3,fa:1e:a4:43:b4:47:,shayari,-56
+p1407,burst_1764233096,3,8e:1f:64:8a:a0:33:,NITD,-68
+p1407,burst_1764233096,3,92:cb:96:65:a4:d2:,Lol,-53
+p1407,burst_1764233096,3,be:f1:a3:4c:d0:39:,project,-42
+p1407,burst_1764233096,3,fa:1e:a4:43:b4:47:,shayari,-55
+p1407,burst_1764233096,3,ea:f3:bc:51:91:c5:,MBZ's Lap,-74
+p1407,burst_1764233096,3,ba:6b:ad:3a:d9:69:,TIWARI JI,-96
+p1407,burst_1764233096,3,dc:ea:e7:b9:16:00:,Delhi NIT,-88
+p1407,burst_1764233096,3,dc:ea:e7:b9:16:08:,Delhi NIT,-83
+p1407,burst_1764233096,3,be:f1:a3:4c:d0:39:,project,-42
+p1407,burst_1764233096,3,dc:ea:e7:b9:16:0b:,Delhi NIT Guest,-83
+p1407,burst_1764233096,3,dc:ea:e7:b9:16:0a:,Delhi NIT Student,-84
+p1407,burst_1764233096,3,92:cb:96:65:a4:d2:,Lol,-53
+p1407,burst_1764233096,3,ae:0d:27:65:6f:7a:,Babblu,-52
+p1407,burst_1764233096,3,76:e5:f9:f4:c6:71:,THEBOSS_10,-95
+p1407,burst_1764233096,3,8e:1f:64:8a:a0:33:,NITD,-68
+p1407,burst_1764233096,4,fa:1e:a4:43:b4:47:,shayari,-55
+p1407,burst_1764233096,4,ce:1f:64:8a:a0:33:,NITD,-72
+p1407,burst_1764233096,4,92:cb:96:65:a4:d2:,Lol,-52
+p1407,burst_1764233096,4,be:f1:a3:4c:d0:39:,project,-34
+p1407,burst_1764233096,4,ce:1f:64:8a:a0:33:,NITD,-72
+p1407,burst_1764233096,4,fa:1e:a4:43:b4:47:,shayari,-56
+p1407,burst_1764233096,4,92:cb:96:65:a4:d2:,Lol,-52
+p1407,burst_1764233096,4,dc:ea:e7:b9:16:00:,Delhi NIT,-89
+p1407,burst_1764233096,4,a4:2a:95:e4:1e:92:,Room 207,-70
+p1407,burst_1764233096,4,be:f1:a3:4c:d0:39:,project,-34
+p1407,burst_1764233096,4,dc:ea:e7:b9:15:6a:,Delhi NIT Student,-84
+p1407,burst_1764233096,4,ea:f3:bc:51:91:c5:,MBZ's Lap,-74
+p1407,burst_1764233096,4,ae:0d:27:65:6f:7a:,Babblu,-58
+p1407,burst_1764233096,5,ba:6b:ad:3a:d9:69:,TIWARI JI,-97
+p1407,burst_1764233096,5,fa:1e:a4:43:b4:47:,shayari,-54
+p1407,burst_1764233096,5,8e:1f:64:8a:a0:33:,NITD,-70
+p1407,burst_1764233096,5,ce:1f:64:8a:a0:33:,NITD,-73
+p1407,burst_1764233096,5,92:cb:96:65:a4:d2:,Lol,-52
+p1407,burst_1764233096,5,be:f1:a3:4c:d0:39:,project,-32
+p1407,burst_1764233096,5,fa:1e:a4:43:b4:47:,shayari,-55
+p1407,burst_1764233096,5,92:cb:96:65:a4:d2:,Lol,-52
+p1407,burst_1764233096,5,dc:ea:e7:b9:16:00:,Delhi NIT,-86
+p1407,burst_1764233096,5,dc:ea:e7:b9:14:80:,Delhi NIT,-96
+p1407,burst_1764233096,5,dc:ea:e7:b9:16:08:,Delhi NIT,-82
+p1407,burst_1764233096,5,dc:ea:e7:b9:15:68:,Delhi NIT,-84
+p1407,burst_1764233096,5,dc:ea:e7:b9:15:60:,Delhi NIT,-87
+p1407,burst_1764233096,5,8e:1f:64:8a:a0:33:,NITD,-70
+p1407,burst_1764233096,5,ce:1f:64:8a:a0:33:,NITD,-73
+p1407,burst_1764233096,5,dc:ea:e7:b9:16:0b:,Delhi NIT Guest,-82
+p1407,burst_1764233096,5,dc:ea:e7:b9:15:6b:,Delhi NIT Guest,-85
+p1407,burst_1764233096,5,dc:ea:e7:b9:16:0a:,Delhi NIT Student,-83
+p1407,burst_1764233096,5,ba:6b:ad:3a:d9:69:,TIWARI JI,-97
+p1407,burst_1764233096,5,ea:f3:bc:51:91:c5:,MBZ's Lap,-75
+p1407,burst_1764233096,5,60:e3:27:b3:3b:f2:,sz,-99
+p1407,burst_1764233096,5,ae:0d:27:65:6f:7a:,Babblu,-55
+p1407,burst_1764233096,5,50:91:e3:bd:6e:86:,TP-Link_6E86,-96
+p1407,burst_1764233096,5,be:f1:a3:4c:d0:39:,project,-32
+p1407,burst_1764233096,5,a4:2a:95:e4:1e:92:,Room 207,-71
+p1405,burst_1764235679,1,b4:a7:c6:f3:11:3b:,JioFiber-PSrCn,-31
+p1405,burst_1764235679,1,b4:a7:c6:f3:11:3c:,JioFiber-PSrCn_5G,-33
+p1405,burst_1764235679,1,38:6b:1c:28:b1:ea:,bhatinda_sahil,-76
+p1405,burst_1764235679,1,ce:1f:64:8a:a0:33:,NITD,-53
+p1405,burst_1764235679,1,8e:1f:64:8a:a0:33:,NITD,-57
+p1405,burst_1764235679,1,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-51
+p1405,burst_1764235679,1,b4:a7:c6:f3:11:3b:,JioFiber-PSrCn,-31
+p1405,burst_1764235679,1,b4:a7:c6:f3:11:3c:,JioFiber-PSrCn_5G,-33
+p1405,burst_1764235679,1,c6:35:32:23:42:a3:,JCV,-86
+p1405,burst_1764235679,1,dc:ea:e7:b2:1f:3b:,Baha's Wifi,-93
+p1405,burst_1764235679,1,96:a9:4d:93:c1:4f:,MacBook Air M2,-75
+p1405,burst_1764235679,1,38:6b:1c:28:b1:ea:,bhatinda_sahil,-76
+p1405,burst_1764235679,1,ce:1f:64:8a:a0:33:,NITD,-53
+p1405,burst_1764235679,1,8e:1f:64:8a:a0:33:,NITD,-57
+p1405,burst_1764235679,1,ec:75:0c:25:6b:65:,TP-Link_6B65,-89
+p1405,burst_1764235679,1,dc:ea:e7:b2:a7:77:,NIT DELHI,-78
+p1405,burst_1764235679,1,ee:ad:e0:43:8f:2a:,NIT KA WIFI_2,-68
+p1405,burst_1764235679,1,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-51
+p1405,burst_1764235679,1,e8:65:d4:08:10:d0:,King,-93
+p1405,burst_1764235679,1,a8:29:48:a8:c8:5e:,vinjiy,-84
+p1405,burst_1764235679,1,60:e3:27:b3:3b:f2:,sz,-45
+p1405,burst_1764235679,1,e8:65:d4:0c:de:84:,Tenda_0CDE80,-88
+p1405,burst_1764235679,2,ba:6b:ad:3a:d9:69:,TIWARI JI,-96
+p1405,burst_1764235679,2,b4:a7:c6:f3:11:3b:,JioFiber-PSrCn,-32
+p1405,burst_1764235679,2,b4:a7:c6:f3:11:3c:,JioFiber-PSrCn_5G,-33
+p1405,burst_1764235679,2,ce:1f:64:8a:a0:33:,NITD,-53
+p1405,burst_1764235679,2,8e:1f:64:8a:a0:33:,NITD,-59
+p1405,burst_1764235679,2,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-51
+p1405,burst_1764235679,2,b4:a7:c6:f3:11:3b:,JioFiber-PSrCn,-31
+p1405,burst_1764235679,2,b4:a7:c6:f3:11:3c:,JioFiber-PSrCn_5G,-33
+p1405,burst_1764235679,2,ec:75:0c:25:6b:65:,TP-Link_6B65,-88
+p1405,burst_1764235679,2,96:a9:4d:93:c1:4f:,MacBook Air M2,-79
+p1405,burst_1764235679,2,dc:ea:e7:b2:a7:77:,NIT DELHI,-83
+p1405,burst_1764235679,2,ba:6b:ad:3a:d9:69:,TIWARI JI,-96
+p1405,burst_1764235679,2,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-51
+p1405,burst_1764235679,2,60:e3:27:b3:3b:f2:,sz,-40
+p1405,burst_1764235679,2,22:0c:86:9a:bf:71:,Airtel_Zerotouch_5G,-88
+p1405,burst_1764235679,2,20:0c:86:aa:bf:71:,Airtel_Zerotouch,-88
+p1405,burst_1764235679,2,ce:1f:64:8a:a0:33:,NITD,-53
+p1405,burst_1764235679,2,8e:1f:64:8a:a0:33:,NITD,-59
+p1405,burst_1764235679,3,b4:a7:c6:f3:11:3b:,JioFiber-PSrCn,-31
+p1405,burst_1764235679,3,b4:a7:c6:f3:11:3c:,JioFiber-PSrCn_5G,-33
+p1405,burst_1764235679,3,38:6b:1c:28:b1:ea:,bhatinda_sahil,-84
+p1405,burst_1764235679,3,ce:1f:64:8a:a0:33:,NITD,-54
+p1405,burst_1764235679,3,8e:1f:64:8a:a0:33:,NITD,-53
+p1405,burst_1764235679,3,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-50
+p1405,burst_1764235679,3,22:0c:86:9a:bf:72:,Airtel_Zerotouch_5G,-86
+p1405,burst_1764235679,3,22:0c:86:9a:bf:71:,Airtel_Zerotouch_5G,-87
+p1405,burst_1764235679,3,dc:ea:e7:b2:1f:3b:,Baha's Wifi,-93
+p1405,burst_1764235679,3,96:a9:4d:93:c1:4f:,MacBook Air M2,-74
+p1405,burst_1764235679,3,b4:a7:c6:f3:11:3b:,JioFiber-PSrCn,-31
+p1405,burst_1764235679,3,60:e3:27:b3:3b:f2:,sz,-39
+p1405,burst_1764235679,3,38:6b:1c:28:b1:ea:,bhatinda_sahil,-84
+p1405,burst_1764235679,3,ce:1f:64:8a:a0:33:,NITD,-54
+p1405,burst_1764235679,3,8e:1f:64:8a:a0:33:,NITD,-53
+p1405,burst_1764235679,3,b4:a7:c6:f3:11:3c:,JioFiber-PSrCn_5G,-33
+p1405,burst_1764235679,3,ee:ad:e0:43:8f:2a:,NIT KA WIFI_2,-70
+p1405,burst_1764235679,3,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-50
+p1405,burst_1764235679,3,e8:65:d4:08:10:d0:,King,-96
+p1405,burst_1764235679,3,a8:29:48:a8:c8:5e:,vinjiy,-84
+p1405,burst_1764235679,3,a8:29:48:a8:b4:36:,TP-Link_B436,-84
+p1405,burst_1764235679,3,20:0c:86:aa:bf:71:,Airtel_Zerotouch,-86
+p1405,burst_1764235679,3,dc:ea:e7:b2:d5:3f:,DIR-615-D53E,-80
+p1405,burst_1764235679,4,b4:a7:c6:f3:11:3b:,JioFiber-PSrCn,-30
+p1405,burst_1764235679,4,b4:a7:c6:f3:11:3c:,JioFiber-PSrCn_5G,-34
+p1405,burst_1764235679,4,38:6b:1c:28:b1:ea:,bhatinda_sahil,-85
+p1405,burst_1764235679,4,ce:1f:64:8a:a0:33:,NITD,-54
+p1405,burst_1764235679,4,8e:1f:64:8a:a0:33:,NITD,-50
+,,,,,
+p1405,burst_1764235679,4,ce:1f:64:8a:a0:33:,NITD,-54
+p1405,burst_1764235679,4,8e:1f:64:8a:a0:33:,NITD,-50
+p1405,burst_1764235679,4,c6:35:32:23:42:a3:,JCV,-85
+p1405,burst_1764235679,4,96:a9:4d:93:c1:4f:,MacBook Air M2,-75
+p1405,burst_1764235679,4,dc:ea:e7:b2:a7:77:,NIT DELHI,-85
+p1405,burst_1764235679,4,38:6b:1c:28:b1:ea:,bhatinda_sahil,-85
+p1405,burst_1764235679,4,60:e3:27:b3:3b:f2:,sz,-41
+p1405,burst_1764235679,4,b4:a7:c6:f3:11:3b:,JioFiber-PSrCn,-30
+p1405,burst_1764235679,4,22:0c:86:9a:bf:72:,Airtel_Zerotouch_5G,-86
+p1405,burst_1764235679,4,20:0c:86:aa:bf:72:,Airtel_Zerotouch_5G,-85
+p1405,burst_1764235679,4,22:0c:86:9a:bf:71:,Airtel_Zerotouch_5G,-91
+p1405,burst_1764235679,4,b4:a7:c6:f3:11:3c:,JioFiber-PSrCn_5G,-34
+p1405,burst_1764235679,4,dc:ea:e7:b2:1f:3b:,Baha's Wifi,-93
+p1405,burst_1764235679,4,dc:ea:e7:b2:c2:57:,Room - 69,-95
+,,,,,
+p1405,burst_1764235679,4,a8:29:48:a8:c8:5e:,vinjiy,-82
+p1405,burst_1764235679,4,20:0c:86:aa:bf:71:,Airtel_Zerotouch,-91
+p1405,burst_1764235679,5,b4:a7:c6:f3:11:3b:,JioFiber-PSrCn,-31
+p1405,burst_1764235679,5,b4:a7:c6:f3:11:3c:,JioFiber-PSrCn_5G,-33
+p1405,burst_1764235679,5,38:6b:1c:28:b1:ea:,bhatinda_sahil,-84
+p1405,burst_1764235679,5,ce:1f:64:8a:a0:33:,NITD,-54
+p1405,burst_1764235679,5,8e:1f:64:8a:a0:33:,NITD,-48
+,,,,,
+p1405,burst_1764235679,5,b4:a7:c6:f3:11:3b:,JioFiber-PSrCn,-30
+p1405,burst_1764235679,5,ce:1f:64:8a:a0:33:,NITD,-54
+p1405,burst_1764235679,5,8e:1f:64:8a:a0:33:,NITD,-48
+p1405,burst_1764235679,5,c6:35:32:23:42:a3:,JCV,-86
+p1405,burst_1764235679,5,dc:ea:e7:b2:c2:57:,Room - 69,-96
+p1405,burst_1764235679,5,dc:ea:e7:b2:1f:3b:,Baha's Wifi,-91
+p1405,burst_1764235679,5,b4:a7:c6:f3:11:3c:,JioFiber-PSrCn_5G,-33
+p1405,burst_1764235679,5,ee:ad:e0:43:8f:2a:,NIT KA WIFI_2,-76
+p1405,burst_1764235679,5,ec:75:0c:25:6b:65:,TP-Link_6B65,-92
+p1405,burst_1764235679,5,96:a9:4d:93:c1:4f:,MacBook Air M2,-76
+p1405,burst_1764235679,5,dc:ea:e7:b2:a7:77:,NIT DELHI,-86
+p1405,burst_1764235679,5,a8:29:48:a8:c8:5e:,vinjiy,-83
+p1405,burst_1764235679,5,50:2b:73:7b:ed:48:,yatharth nitd ka playboy,-93
+p1405,burst_1764235679,5,38:6b:1c:28:b1:ea:,bhatinda_sahil,-84
+p1405,burst_1764235679,5,a8:29:48:a8:b4:36:,TP-Link_B436,-87
+p1405,burst_1764235679,5,60:e3:27:b3:3b:f2:,sz,-45
+p1405,burst_1764235679,5,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-46
+p1405,burst_1764235679,5,dc:ea:e7:b2:d5:3f:,DIR-615-D53E,-84
+p1405,burst_1764235679,5,22:0c:86:9a:bf:71:,Airtel_Zerotouch_5G,-89
+p1405,burst_1764235679,5,20:0c:86:aa:bf:71:,Airtel_Zerotouch,-88
+mini118,burst_1764243042,1,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-28
+mini118,burst_1764243042,1,70:e4:22:c0:1a:08:,NIT-HOSTEL,-89
+mini118,burst_1764243042,1,70:e4:22:c9:0a:58:,NIT-HOSTEL,-81
+mini118,burst_1764243042,1,28:87:ba:ef:5e:32:,NIT-WIFI,-85
+mini118,burst_1764243042,1,14:eb:b6:79:21:c7:,NIT-WIFI,-78
+mini118,burst_1764243042,1,1c:61:b4:c6:b6:e0:,NIT-WIFI,-86
+mini118,burst_1764243042,1,1c:61:b4:c6:98:29:,NIT-WIFI,-77
+mini118,burst_1764243042,1,1c:61:b4:c6:9c:2b:,NIT_WIFI,-81
+mini118,burst_1764243042,1,d4:35:38:f5:d6:f1:,NIT-WIFI-ECE_5G,-59
+mini118,burst_1764243042,1,dc:ea:e7:b9:15:20:,Delhi NIT,-95
+mini118,burst_1764243042,1,28:87:ba:ef:5e:32:,NIT-WIFI,-85
+mini118,burst_1764243042,1,14:eb:b6:79:21:c7:,NIT-WIFI,-78
+mini118,burst_1764243042,1,1c:61:b4:c6:b6:e0:,NIT-WIFI,-86
+mini118,burst_1764243042,1,1c:61:b4:c6:98:29:,NIT-WIFI,-77
+mini118,burst_1764243042,1,c2:18:03:a7:7a:3f:,DIRECT-3F-HP Laser 138fnw,-53
+mini118,burst_1764243042,1,c2:18:03:a2:72:d0:,DIRECT-D0-HP Laser 138fnw,-57
+mini118,burst_1764243042,1,1c:61:b4:c6:9c:2b:,NIT_WIFI,-81
+mini118,burst_1764243042,1,d4:35:38:f5:d6:f0:,NIT-WIFI-ECE,-56
+mini118,burst_1764243042,1,c2:18:03:a7:79:f7:,DIRECT-F7-HP Laser 138fnw,-62
+mini118,burst_1764243042,1,70:e4:22:c0:1a:01:,NIT-WIFI,-89
+mini118,burst_1764243042,1,70:e4:22:c0:1a:00:,DIR_WIFI,-90
+mini118,burst_1764243042,1,70:e4:22:c9:0a:50:,DIR_WIFI,-83
+mini118,burst_1764243042,1,70:e4:22:c0:1a:07:,Test,-88
+mini118,burst_1764243042,1,70:e4:22:c9:0a:57:,Test,-83
+mini118,burst_1764243042,1,70:e4:22:c0:1a:08:,NIT-HOSTEL,-89
+mini118,burst_1764243042,1,70:e4:22:c9:0a:58:,NIT-HOSTEL,-81
+mini118,burst_1764243042,1,bc:22:28:b6:66:00:,CHEMISTRY_LAB,-95
+mini118,burst_1764243042,1,d8:5d:e2:3d:5c:4d:,HP-Print-4d-LaserJet Pro M202dw,-62
+mini118,burst_1764243042,1,06:68:74:99:ec:b2:,DIRECT-b2-HP M233 LaserJet,-77
+mini118,burst_1764243042,1,c2:18:03:a7:79:f4:,DIRECT-F4-HP LaserAM,-84
+mini118,burst_1764243042,1,18:0f:76:8c:c4:88:,ECE Conf Room,-57
+mini118,burst_1764243042,2,70:e4:22:c0:1a:08:,NIT-HOSTEL,-87
+mini118,burst_1764243042,2,1c:61:b4:c6:b6:de:,NIT-WIFI,-73
+mini118,burst_1764243042,2,1c:61:b4:c6:b6:e0:,NIT-WIFI,-84
+mini118,burst_1764243042,2,1c:61:b4:c6:98:29:,NIT-WIFI,-76
+mini118,burst_1764243042,2,1c:61:b4:c6:98:27:,NIT-WIFI,-67
+mini118,burst_1764243042,2,1c:61:b4:c6:9c:2b:,NIT_WIFI,-83
+mini118,burst_1764243042,2,1c:61:b4:c6:9c:2b:,NIT_WIFI,-83
+mini118,burst_1764243042,2,dc:ea:e7:b9:15:e0:,Delhi NIT,-91
+mini118,burst_1764243042,2,dc:ea:e7:b9:15:20:,Delhi NIT,-96
+mini118,burst_1764243042,2,1c:61:b4:c6:b6:de:,NIT-WIFI,-73
+mini118,burst_1764243042,2,1c:61:b4:c6:b6:e0:,NIT-WIFI,-84
+mini118,burst_1764243042,2,1c:61:b4:c6:98:29:,NIT-WIFI,-76
+mini118,burst_1764243042,2,1c:61:b4:c6:98:27:,NIT-WIFI,-67
+mini118,burst_1764243042,2,c2:18:03:a2:72:d0:,DIRECT-D0-HP Laser 138fnw,-47
+mini118,burst_1764243042,2,d4:35:38:f5:d6:f1:,NIT-WIFI-ECE_5G,-63
+mini118,burst_1764243042,2,d4:35:38:f5:d6:f0:,NIT-WIFI-ECE,-54
+mini118,burst_1764243042,2,c2:18:03:a7:79:f7:,DIRECT-F7-HP Laser 138fnw,-59
+mini118,burst_1764243042,2,70:e4:22:c0:1a:07:,Test,-85
+mini118,burst_1764243042,2,70:e4:22:c0:1a:08:,NIT-HOSTEL,-87
+mini118,burst_1764243042,2,70:e4:22:c0:1a:00:,DIR_WIFI,-88
+mini118,burst_1764243042,2,70:e4:22:c0:1a:01:,NIT-WIFI,-86
+mini118,burst_1764243042,2,d8:5d:e2:3d:5c:4d:,HP-Print-4d-LaserJet Pro M202dw,-64
+mini118,burst_1764243042,2,c2:18:03:a7:7a:3f:,DIRECT-3F-HP Laser 138fnw,-57
+mini118,burst_1764243042,2,12:b6:76:d6:19:8d:,DIRECT-8D-HP Color LJ 3203,-82
+mini118,burst_1764243042,2,18:0f:76:8c:c4:88:,ECE Conf Room,-60
+mini118,burst_1764243042,3,70:e4:22:c0:1a:08:,NIT-HOSTEL,-85
+mini118,burst_1764243042,3,70:e4:22:c9:0a:58:,NIT-HOSTEL,-90
+mini118,burst_1764243042,3,14:eb:b6:79:21:c8:,NIT-WIFI,-73
+mini118,burst_1764243042,3,1c:61:b4:c6:98:27:,NIT-WIFI,-65
+mini118,burst_1764243042,3,28:87:ba:ef:5e:32:,NIT-WIFI,-90
+mini118,burst_1764243042,3,1c:61:b4:c6:9c:29:,NIT_WIFI,-77
+mini118,burst_1764243042,3,d4:35:38:f5:d6:f0:,NIT-WIFI-ECE,-59
+mini118,burst_1764243042,3,70:e4:22:c0:1a:08:,NIT-HOSTEL,-85
+mini118,burst_1764243042,3,70:e4:22:c9:0a:58:,NIT-HOSTEL,-90
+mini118,burst_1764243042,3,70:e4:22:c0:1a:00:,DIR_WIFI,-86
+mini118,burst_1764243042,3,c2:18:03:a7:79:f7:,DIRECT-F7-HP Laser 138fnw,-60
+mini118,burst_1764243042,3,70:e4:22:c0:1a:07:,Test,-83
+mini118,burst_1764243042,3,70:e4:22:c0:1a:01:,NIT-WIFI,-83
+mini118,burst_1764243042,3,70:e4:22:c9:0a:51:,NIT-WIFI,-92
+mini118,burst_1764243042,3,1c:61:b4:c6:9c:29:,NIT_WIFI,-77
+mini118,burst_1764243042,3,14:eb:b6:79:21:c8:,NIT-WIFI,-73
+mini118,burst_1764243042,3,1c:61:b4:c6:98:27:,NIT-WIFI,-65
+mini118,burst_1764243042,3,28:87:ba:ef:5e:32:,NIT-WIFI,-90
+mini118,burst_1764243042,3,c2:18:03:a7:7a:3f:,DIRECT-3F-HP Laser 138fnw,-54
+mini118,burst_1764243042,3,12:b6:76:d6:19:8d:,DIRECT-8D-HP Color LJ 3203,-83
+mini118,burst_1764243042,3,d8:5d:e2:3d:5c:4d:,HP-Print-4d-LaserJet Pro M202dw,-66
+mini118,burst_1764243042,3,c2:18:03:a2:72:d0:,DIRECT-D0-HP Laser 138fnw,-43
+mini118,burst_1764243042,3,18:0f:76:8c:c4:88:,ECE Conf Room,-63
+mini118,burst_1764243042,4,70:e4:22:c0:1a:08:,NIT-HOSTEL,-85
+mini118,burst_1764243042,4,70:e4:22:c9:0a:58:,NIT-HOSTEL,-90
+mini118,burst_1764243042,4,14:eb:b6:79:21:c8:,NIT-WIFI,-73
+mini118,burst_1764243042,4,1c:61:b4:c6:98:27:,NIT-WIFI,-65
+mini118,burst_1764243042,4,28:87:ba:ef:5e:32:,NIT-WIFI,-90
+mini118,burst_1764243042,4,1c:61:b4:c6:9c:29:,NIT_WIFI,-77
+mini118,burst_1764243042,4,d4:35:38:f5:d6:f0:,NIT-WIFI-ECE,-59
+mini118,burst_1764243042,4,70:e4:22:c0:1a:08:,NIT-HOSTEL,-85
+mini118,burst_1764243042,4,70:e4:22:c9:0a:58:,NIT-HOSTEL,-90
+mini118,burst_1764243042,4,70:e4:22:c0:1a:00:,DIR_WIFI,-86
+mini118,burst_1764243042,4,c2:18:03:a7:79:f7:,DIRECT-F7-HP Laser 138fnw,-60
+mini118,burst_1764243042,4,70:e4:22:c0:1a:07:,Test,-83
+mini118,burst_1764243042,4,70:e4:22:c0:1a:01:,NIT-WIFI,-83
+mini118,burst_1764243042,4,70:e4:22:c9:0a:51:,NIT-WIFI,-92
+mini118,burst_1764243042,4,1c:61:b4:c6:9c:29:,NIT_WIFI,-77
+mini118,burst_1764243042,4,14:eb:b6:79:21:c8:,NIT-WIFI,-73
+mini118,burst_1764243042,4,1c:61:b4:c6:98:27:,NIT-WIFI,-65
+mini118,burst_1764243042,4,28:87:ba:ef:5e:32:,NIT-WIFI,-90
+mini118,burst_1764243042,4,c2:18:03:a7:7a:3f:,DIRECT-3F-HP Laser 138fnw,-54
+mini118,burst_1764243042,4,12:b6:76:d6:19:8d:,DIRECT-8D-HP Color LJ 3203,-83
+mini118,burst_1764243042,4,d8:5d:e2:3d:5c:4d:,HP-Print-4d-LaserJet Pro M202dw,-66
+mini118,burst_1764243042,4,c2:18:03:a2:72:d0:,DIRECT-D0-HP Laser 138fnw,-43
+mini118,burst_1764243042,4,18:0f:76:8c:c4:88:,ECE Conf Room,-63
+mini118,burst_1764243042,5,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-25
+mini118,burst_1764243042,5,70:e4:22:c0:1a:08:,NIT-HOSTEL,-85
+mini118,burst_1764243042,5,70:e4:22:c9:0a:58:,NIT-HOSTEL,-90
+mini118,burst_1764243042,5,1c:61:b4:c6:b6:e0:,NIT-WIFI,-84
+mini118,burst_1764243042,5,1c:61:b4:c6:98:29:,NIT-WIFI,-76
+mini118,burst_1764243042,5,1c:61:b4:c6:b6:de:,NIT-WIFI,-72
+mini118,burst_1764243042,5,14:eb:b6:79:21:c8:,NIT-WIFI,-73
+mini118,burst_1764243042,5,1c:61:b4:c6:98:27:,NIT-WIFI,-65
+mini118,burst_1764243042,5,28:87:ba:ef:5e:32:,NIT-WIFI,-90
+mini118,burst_1764243042,5,1c:61:b4:c6:9c:2b:,NIT_WIFI,-83
+mini118,burst_1764243042,5,1c:61:b4:c6:9c:29:,NIT_WIFI,-77
+mini118,burst_1764243042,5,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-26
+mini118,burst_1764243042,5,1c:61:b4:c6:9c:2b:,NIT_WIFI,-83
+mini118,burst_1764243042,5,1c:61:b4:c6:9c:29:,NIT_WIFI,-77
+mini118,burst_1764243042,5,1c:61:b4:c6:b6:e0:,NIT-WIFI,-84
+mini118,burst_1764243042,5,1c:61:b4:c6:98:29:,NIT-WIFI,-76
+mini118,burst_1764243042,5,1c:61:b4:c6:b6:de:,NIT-WIFI,-72
+mini118,burst_1764243042,5,14:eb:b6:79:21:c8:,NIT-WIFI,-73
+mini118,burst_1764243042,5,1c:61:b4:c6:98:27:,NIT-WIFI,-65
+mini118,burst_1764243042,5,28:87:ba:ef:5e:32:,NIT-WIFI,-90
+mini118,burst_1764243042,5,d4:35:38:f5:d6:f1:,NIT-WIFI-ECE_5G,-63
+mini118,burst_1764243042,5,d4:35:38:f5:d6:f0:,NIT-WIFI-ECE,-55
+mini118,burst_1764243042,5,d8:5d:e2:3d:5c:4d:,HP-Print-4d-LaserJet Pro M202dw,-66
+mini118,burst_1764243042,5,c2:18:03:a2:72:d0:,DIRECT-D0-HP Laser 138fnw,-42
+mini118,burst_1764243042,5,70:e4:22:c0:1a:08:,NIT-HOSTEL,-85
+mini118,burst_1764243042,5,70:e4:22:c9:0a:58:,NIT-HOSTEL,-90
+mini118,burst_1764243042,5,70:e4:22:c0:1a:00:,DIR_WIFI,-86
+mini118,burst_1764243042,5,c2:18:03:a7:79:f7:,DIRECT-F7-HP Laser 138fnw,-60
+mini118,burst_1764243042,5,70:e4:22:c0:1a:07:,Test,-83
+mini118,burst_1764243042,5,70:e4:22:c0:1a:01:,NIT-WIFI,-83
+mini118,burst_1764243042,5,70:e4:22:c9:0a:51:,NIT-WIFI,-92
+mini118,burst_1764243042,5,c2:18:03:a7:7a:3f:,DIRECT-3F-HP Laser 138fnw,-54
+mini118,burst_1764243042,5,12:b6:76:d6:19:8d:,DIRECT-8D-HP Color LJ 3203,-83
+mini118,burst_1764243042,5,18:0f:76:8c:c4:88:,ECE Conf Room,-63
+mini122,burst_1764243091,1,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-30
+mini122,burst_1764243091,1,14:eb:b6:79:21:c8:,NIT-WIFI,-41
+mini122,burst_1764243091,1,1c:61:b4:c6:b6:de:,NIT-WIFI,-68
+mini122,burst_1764243091,1,14:eb:b6:79:21:c7:,NIT-WIFI,-49
+mini122,burst_1764243091,1,1c:61:b4:c6:98:29:,NIT-WIFI,-79
+mini122,burst_1764243091,1,28:87:ba:ef:5e:31:,NIT-WIFI,-88
+mini122,burst_1764243091,1,1c:61:b4:c6:b6:e0:,NIT-WIFI,-87
+mini122,burst_1764243091,1,1c:61:b4:c6:98:27:,NIT-WIFI,-79
+mini122,burst_1764243091,1,28:87:ba:ef:5e:32:,NIT-WIFI,-79
+mini122,burst_1764243091,1,dc:ea:e7:b9:15:2b:,Delhi NIT Guest,-77
+mini122,burst_1764243091,1,dc:ea:e7:b9:15:2a:,Delhi NIT Student,-76
+mini122,burst_1764243091,1,dc:ea:e7:b9:15:28:,Delhi NIT,-77
+mini122,burst_1764243091,1,dc:ea:e7:b9:15:20:,Delhi NIT,-68
+mini122,burst_1764243091,1,14:eb:b6:79:21:c8:,NIT-WIFI,-38
+mini122,burst_1764243091,1,1c:61:b4:c6:b6:de:,NIT-WIFI,-68
+mini122,burst_1764243091,1,14:eb:b6:79:21:c7:,NIT-WIFI,-49
+mini122,burst_1764243091,1,1c:61:b4:c6:98:29:,NIT-WIFI,-79
+mini122,burst_1764243091,1,28:87:ba:ef:5e:31:,NIT-WIFI,-88
+mini122,burst_1764243091,1,1c:61:b4:c6:b6:e0:,NIT-WIFI,-87
+mini122,burst_1764243091,1,1c:61:b4:c6:98:27:,NIT-WIFI,-79
+mini122,burst_1764243091,1,28:87:ba:ef:5e:32:,NIT-WIFI,-79
+mini122,burst_1764243091,1,c2:18:03:a7:79:f7:,DIRECT-F7-HP Laser 138fnw,-77
+mini122,burst_1764243091,1,c2:18:03:a7:7a:3f:,DIRECT-3F-HP Laser 138fnw,-74
+mini122,burst_1764243091,1,70:e4:22:c0:1a:01:,NIT-WIFI,-94
+mini122,burst_1764243091,1,d8:5d:e2:3d:5c:4d:,HP-Print-4d-LaserJet Pro M202dw,-62
+mini122,burst_1764243091,1,18:0f:76:8c:c4:88:,ECE Conf Room,-66
+mini122,burst_1764243091,1,c2:18:03:a2:72:d0:,DIRECT-D0-HP Laser 138fnw,-77
+mini122,burst_1764243091,2,14:eb:b6:79:21:c7:,NIT-WIFI,-46
+mini122,burst_1764243091,2,1c:61:b4:c6:b6:e0:,NIT-WIFI,-87
+mini122,burst_1764243091,2,1c:61:b4:c6:98:29:,NIT-WIFI,-80
+mini122,burst_1764243091,2,28:87:ba:ef:5e:31:,NIT-WIFI,-84
+mini122,burst_1764243091,2,28:87:ba:ef:5e:32:,NIT-WIFI,-76
+mini122,burst_1764243091,2,14:eb:b6:79:21:c8:,NIT-WIFI,-38
+mini122,burst_1764243091,2,1c:61:b4:c6:b6:de:,NIT-WIFI,-66
+mini122,burst_1764243091,2,1c:61:b4:c6:98:27:,NIT-WIFI,-82
+mini122,burst_1764243091,2,dc:ea:e7:b9:15:2b:,Delhi NIT Guest,-77
+mini122,burst_1764243091,2,dc:ea:e7:b9:15:2a:,Delhi NIT Student,-76
+mini122,burst_1764243091,2,dc:ea:e7:b9:15:28:,Delhi NIT,-77
+mini122,burst_1764243091,2,dc:ea:e7:b9:15:20:,Delhi NIT,-68
+mini122,burst_1764243091,2,14:eb:b6:79:21:c7:,NIT-WIFI,-46
+mini122,burst_1764243091,2,1c:61:b4:c6:b6:e0:,NIT-WIFI,-87
+mini122,burst_1764243091,2,1c:61:b4:c6:98:29:,NIT-WIFI,-80
+mini122,burst_1764243091,2,28:87:ba:ef:5e:31:,NIT-WIFI,-84
+mini122,burst_1764243091,2,28:87:ba:ef:5e:32:,NIT-WIFI,-76
+mini122,burst_1764243091,2,14:eb:b6:79:21:c8:,NIT-WIFI,-38
+mini122,burst_1764243091,2,1c:61:b4:c6:b6:de:,NIT-WIFI,-66
+mini122,burst_1764243091,2,1c:61:b4:c6:98:27:,NIT-WIFI,-82
+mini122,burst_1764243091,2,d4:35:38:f5:d6:f1:,NIT-WIFI-ECE_5G,-87
+mini122,burst_1764243091,2,d8:5d:e2:3d:5c:4d:,HP-Print-4d-LaserJet Pro M202dw,-63
+mini122,burst_1764243091,2,c2:18:03:a7:7a:3f:,DIRECT-3F-HP Laser 138fnw,-77
+mini122,burst_1764243091,2,70:e4:22:c0:1a:00:,DIR_WIFI,-97
+mini122,burst_1764243091,2,18:0f:76:8c:c4:88:,ECE Conf Room,-66
+mini122,burst_1764243091,2,c2:18:03:a7:79:f7:,DIRECT-F7-HP Laser 138fnw,-80
+mini122,burst_1764243091,2,70:e4:22:c0:1a:01:,NIT-WIFI,-94
+mini122,burst_1764243091,2,c2:18:03:a2:72:d0:,DIRECT-D0-HP Laser 138fnw,-77
+mini122,burst_1764243091,2,d4:35:38:f5:d6:f0:,NIT-WIFI-ECE,-81
+mini122,burst_1764243091,4,14:eb:b6:79:21:c7:,NIT-WIFI,-46
+mini122,burst_1764243091,4,1c:61:b4:c6:b6:e0:,NIT-WIFI,-87
+mini122,burst_1764243091,4,1c:61:b4:c6:98:29:,NIT-WIFI,-80
+mini122,burst_1764243091,4,28:87:ba:ef:5e:31:,NIT-WIFI,-84
+mini122,burst_1764243091,4,1c:61:b4:c6:98:27:,NIT-WIFI,-82
+mini122,burst_1764243091,4,28:87:ba:ef:5e:32:,NIT-WIFI,-76
+mini122,burst_1764243091,4,14:eb:b6:79:21:c8:,NIT-WIFI,-38
+mini122,burst_1764243091,4,1c:61:b4:c6:b6:de:,NIT-WIFI,-66
+mini122,burst_1764243091,4,dc:ea:e7:b9:15:2b:,Delhi NIT Guest,-77
+mini122,burst_1764243091,4,dc:ea:e7:b9:15:2a:,Delhi NIT Student,-76
+mini122,burst_1764243091,4,dc:ea:e7:b9:15:28:,Delhi NIT,-77
+mini122,burst_1764243091,4,dc:ea:e7:b9:15:20:,Delhi NIT,-68
+mini122,burst_1764243091,4,14:eb:b6:79:21:c7:,NIT-WIFI,-46
+mini122,burst_1764243091,4,1c:61:b4:c6:b6:e0:,NIT-WIFI,-87
+mini122,burst_1764243091,4,1c:61:b4:c6:98:29:,NIT-WIFI,-80
+mini122,burst_1764243091,4,28:87:ba:ef:5e:31:,NIT-WIFI,-84
+mini122,burst_1764243091,4,1c:61:b4:c6:98:27:,NIT-WIFI,-82
+mini122,burst_1764243091,4,28:87:ba:ef:5e:32:,NIT-WIFI,-76
+mini122,burst_1764243091,4,14:eb:b6:79:21:c8:,NIT-WIFI,-38
+mini122,burst_1764243091,4,1c:61:b4:c6:b6:de:,NIT-WIFI,-66
+mini122,burst_1764243091,4,d4:35:38:f5:d6:f1:,NIT-WIFI-ECE_5G,-87
+mini122,burst_1764243091,4,c2:18:03:a7:7a:3f:,DIRECT-3F-HP Laser 138fnw,-77
+mini122,burst_1764243091,4,70:e4:22:c0:1a:00:,DIR_WIFI,-97
+mini122,burst_1764243091,4,c2:18:03:a7:79:f7:,DIRECT-F7-HP Laser 138fnw,-80
+mini122,burst_1764243091,4,70:e4:22:c0:1a:01:,NIT-WIFI,-94
+mini122,burst_1764243091,4,d8:5d:e2:3d:5c:4d:,HP-Print-4d-LaserJet Pro M202dw,-63
+mini122,burst_1764243091,4,18:0f:76:8c:c4:88:,ECE Conf Room,-66
+mini122,burst_1764243091,4,c2:18:03:a2:72:d0:,DIRECT-D0-HP Laser 138fnw,-77
+mini122,burst_1764243091,4,d4:35:38:f5:d6:f0:,NIT-WIFI-ECE,-81
+mini122,burst_1764243091,5,70:e4:22:c0:1a:08:,NIT-HOSTEL,-95
+mini122,burst_1764243091,5,14:eb:b6:79:21:c7:,NIT-WIFI,-47
+mini122,burst_1764243091,5,1c:61:b4:c6:b6:e0:,NIT-WIFI,-88
+mini122,burst_1764243091,5,1c:61:b4:c6:98:29:,NIT-WIFI,-81
+mini122,burst_1764243091,5,28:87:ba:ef:5e:31:,NIT-WIFI,-84
+mini122,burst_1764243091,5,14:eb:b6:79:21:c8:,NIT-WIFI,-37
+mini122,burst_1764243091,5,1c:61:b4:c6:b6:de:,NIT-WIFI,-64
+mini122,burst_1764243091,5,1c:61:b4:c6:98:27:,NIT-WIFI,-83
+mini122,burst_1764243091,5,28:87:ba:ef:5e:32:,NIT-WIFI,-74
+mini122,burst_1764243091,5,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-34
+mini122,burst_1764243091,5,14:eb:b6:79:21:c7:,NIT-WIFI,-47
+mini122,burst_1764243091,5,1c:61:b4:c6:b6:e0:,NIT-WIFI,-88
+mini122,burst_1764243091,5,1c:61:b4:c6:98:29:,NIT-WIFI,-81
+mini122,burst_1764243091,5,28:87:ba:ef:5e:31:,NIT-WIFI,-84
+mini122,burst_1764243091,5,14:eb:b6:79:21:c8:,NIT-WIFI,-37
+mini122,burst_1764243091,5,1c:61:b4:c6:b6:de:,NIT-WIFI,-64
+mini122,burst_1764243091,5,1c:61:b4:c6:98:27:,NIT-WIFI,-83
+mini122,burst_1764243091,5,28:87:ba:ef:5e:32:,NIT-WIFI,-74
+mini122,burst_1764243091,5,dc:ea:e7:b9:15:2b:,Delhi NIT Guest,-78
+mini122,burst_1764243091,5,dc:ea:e7:b9:15:2a:,Delhi NIT Student,-77
+mini122,burst_1764243091,5,dc:ea:e7:b9:15:20:,Delhi NIT,-68
+mini122,burst_1764243091,5,dc:ea:e7:b9:15:28:,Delhi NIT,-77
+mini122,burst_1764243091,5,70:e4:22:c0:1a:07:,Test,-94
+mini122,burst_1764243091,5,70:e4:22:c0:1a:01:,NIT-WIFI,-95
+mini122,burst_1764243091,5,70:e4:22:c0:1a:08:,NIT-HOSTEL,-95
+mini122,burst_1764243091,5,70:e4:22:c0:1a:00:,DIR_WIFI,-95
+mini122,burst_1764243091,5,d4:35:38:f5:d6:f0:,NIT-WIFI-ECE,-82
+mini122,burst_1764243091,5,c2:18:03:a7:7a:3f:,DIRECT-3F-HP Laser 138fnw,-78
+mini122,burst_1764243091,5,d8:5d:e2:3d:5c:4d:,HP-Print-4d-LaserJet Pro M202dw,-64
+mini122,burst_1764243091,5,c2:18:03:a2:72:d0:,DIRECT-D0-HP Laser 138fnw,-84
+mini122,burst_1764243091,5,18:0f:76:8c:c4:88:,ECE Conf Room,-68
+messdh,burst_1764243272,1,dc:ea:e7:b9:15:e0:,Delhi NIT,-72
+messdh,burst_1764243272,1,dc:ea:e7:b9:15:e8:,Delhi NIT,-76
+messdh,burst_1764243272,1,bc:22:28:b6:66:00:,CHEMISTRY_LAB,-57
+messdh,burst_1764243272,1,12:b6:76:d6:19:8d:,DIRECT-8D-HP Color LJ 3203,-89
+messdh,burst_1764243272,1,dc:ea:e7:b9:15:eb:,Delhi NIT Guest,-69
+messdh,burst_1764243272,1,dc:ea:e7:b9:15:ea:,Delhi NIT Student,-75
+messdh,burst_1764243272,1,20:b5:c6:cb:83:78:,JioAirfiberA6,-89
+messdh,burst_1764243272,1,82:19:21:30:70:2f:,NIT_DH_MESS,-43
+messdh,burst_1764243272,1,8a:19:21:30:70:28:,NIT_DH_MESS,-30
+messdh,burst_1764243272,1,62:19:21:30:73:a8:,NIT-HOSTEL_BH_03,-89
+messdh,burst_1764243272,1,ec:75:0c:b7:91:5f:,One Piece,-95
+messdh,burst_1764243272,2,dc:ea:e7:b9:15:e0:,Delhi NIT,-69
+messdh,burst_1764243272,2,dc:ea:e7:b9:15:e8:,Delhi NIT,-74
+messdh,burst_1764243272,2,8a:19:21:30:70:28:,NIT_DH_MESS,-30
+messdh,burst_1764243272,2,82:19:21:30:70:2f:,NIT_DH_MESS,-44
+messdh,burst_1764243272,2,dc:ea:e7:b9:15:eb:,Delhi NIT Guest,-69
+messdh,burst_1764243272,2,dc:ea:e7:b9:15:ea:,Delhi NIT Student,-73
+messdh,burst_1764243272,2,20:b5:c6:cb:83:78:,JioAirfiberA6,-90
+messdh,burst_1764243272,2,5c:02:14:65:04:46:,15,-98
+messdh,burst_1764243272,3,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-55
+messdh,burst_1764243272,3,fe:ef:96:fb:7b:12:,Motorola edge 50 neo,-55
+messdh,burst_1764243272,3,dc:ea:e7:b9:15:eb:,Delhi NIT Guest,-70
+messdh,burst_1764243272,3,dc:ea:e7:b9:15:ea:,Delhi NIT Student,-71
+messdh,burst_1764243272,3,dc:ea:e7:b9:15:e8:,Delhi NIT,-72
+messdh,burst_1764243272,3,dc:ea:e7:b9:15:e0:,Delhi NIT,-69
+messdh,burst_1764243272,3,62:19:21:30:73:a8:,NIT-HOSTEL_BH_03,-88
+messdh,burst_1764243272,4,dc:ea:e7:b9:15:eb:,Delhi NIT Guest,-70
+messdh,burst_1764243272,4,dc:ea:e7:b9:15:ea:,Delhi NIT Student,-71
+messdh,burst_1764243272,4,dc:ea:e7:b9:15:e8:,Delhi NIT,-72
+messdh,burst_1764243272,4,dc:ea:e7:b9:15:e0:,Delhi NIT,-69
+messdh,burst_1764243272,4,62:19:21:30:73:a8:,NIT-HOSTEL_BH_03,-88
+messdh,burst_1764243272,5,20:b5:c6:cb:83:78:,JioAirfiberA6,-90
+messdh,burst_1764243272,5,82:19:21:30:70:2f:,NIT_DH_MESS,-42
+messdh,burst_1764243272,5,8a:19:21:30:70:28:,NIT_DH_MESS,-29
+messdh,burst_1764243272,5,dc:ea:e7:b9:15:e0:,Delhi NIT,-69
+messdh,burst_1764243272,5,dc:ea:e7:b9:15:e8:,Delhi NIT,-72
+messdh,burst_1764243272,5,dc:ea:e7:b9:15:eb:,Delhi NIT Guest,-70
+messdh,burst_1764243272,5,dc:ea:e7:b9:15:ea:,Delhi NIT Student,-71
+messdh,burst_1764243272,5,62:19:21:30:73:a8:,NIT-HOSTEL_BH_03,-88
+oatfront1,burst_1764243667,1,70:e4:22:97:83:d7:,NIT-HOSTEL,-82
+oatfront1,burst_1764243667,1,2c:d0:2d:d4:b1:47:,NIT-HOSTEL,-71
+oatfront1,burst_1764243667,1,00:27:90:c9:1b:47:,NIT-HOSTEL,-80
+oatfront1,burst_1764243667,1,70:e4:22:c0:1a:07:,NIT-HOSTEL,-84
+oatfront1,burst_1764243667,1,54:4a:00:5a:84:87:,NIT-HOSTEL,-86
+oatfront1,burst_1764243667,1,70:e4:22:97:89:37:,NIT-HOSTEL,-81
+oatfront1,burst_1764243667,1,70:e4:22:97:83:d8:,NIT-HOSTEL,-73
+oatfront1,burst_1764243667,1,54:4a:00:5a:84:88:,NIT-HOSTEL,-76
+oatfront1,burst_1764243667,1,2c:d0:2d:d4:b1:48:,NIT-HOSTEL,-58
+oatfront1,burst_1764243667,1,70:e4:22:c9:0a:58:,NIT-HOSTEL,-56
+oatfront1,burst_1764243667,1,00:27:90:c9:1b:48:,NIT-HOSTEL,-62
+oatfront1,burst_1764243667,1,1c:61:b4:c6:9c:29:,NIT_WIFI,-70
+oatfront1,burst_1764243667,1,1c:61:b4:c6:9c:2b:,NIT_WIFI,-87
+oatfront1,burst_1764243667,1,72:23:51:a4:d5:1f:,NIT-WiFi_BASE,-84
+oatfront1,burst_1764243667,1,1c:61:b4:c6:9c:29:,NIT_WIFI,-70
+oatfront1,burst_1764243667,1,1c:61:b4:c6:9c:2b:,NIT_WIFI,-87
+oatfront1,burst_1764243667,1,70:e4:22:c0:1a:0e:,NIT-WIFI,-84
+oatfront1,burst_1764243667,1,2c:d0:2d:d4:b1:4e:,NIT-WIFI,-85
+oatfront1,burst_1764243667,1,00:27:90:c9:1b:4e:,NIT-WIFI,-85
+oatfront1,burst_1764243667,1,54:4a:00:5a:84:8e:,NIT-WIFI,-86
+oatfront1,burst_1764243667,1,70:e4:22:97:83:de:,NIT-WIFI,-80
+oatfront1,burst_1764243667,1,70:e4:22:c9:0a:5e:,NIT-WIFI,-77
+oatfront1,burst_1764243667,1,70:e4:22:97:89:3e:,NIT-WIFI,-81
+oatfront1,burst_1764243667,1,70:e4:22:97:83:d1:,NIT-WIFI,-68
+oatfront1,burst_1764243667,1,54:4a:00:5a:84:81:,NIT-WIFI,-74
+oatfront1,burst_1764243667,1,70:e4:22:97:89:31:,NIT-WIFI,-84
+oatfront1,burst_1764243667,1,70:e4:22:c9:0a:51:,NIT-WIFI,-55
+oatfront1,burst_1764243667,1,2c:d0:2d:d4:b1:41:,NIT-WIFI,-64
+oatfront1,burst_1764243667,1,00:27:90:c9:1b:41:,NIT-WIFI,-61
+oatfront1,burst_1764243667,1,70:e4:22:97:83:d7:,NIT-HOSTEL,-82
+oatfront1,burst_1764243667,1,2c:d0:2d:d4:b1:47:,NIT-HOSTEL,-71
+oatfront1,burst_1764243667,1,00:27:90:c9:1b:47:,NIT-HOSTEL,-80
+oatfront1,burst_1764243667,1,70:e4:22:c0:1a:07:,NIT-HOSTEL,-84
+oatfront1,burst_1764243667,1,54:4a:00:5a:84:87:,NIT-HOSTEL,-86
+oatfront1,burst_1764243667,1,70:e4:22:97:89:37:,NIT-HOSTEL,-81
+oatfront1,burst_1764243667,1,70:e4:22:97:83:d8:,NIT-HOSTEL,-73
+oatfront1,burst_1764243667,1,54:4a:00:5a:84:88:,NIT-HOSTEL,-76
+oatfront1,burst_1764243667,1,2c:d0:2d:d4:b1:48:,NIT-HOSTEL,-58
+oatfront1,burst_1764243667,1,70:e4:22:c9:0a:58:,NIT-HOSTEL,-56
+oatfront1,burst_1764243667,1,00:27:90:c9:1b:48:,NIT-HOSTEL,-62
+oatfront1,burst_1764243667,1,70:e4:22:97:83:df:,DIR_WIFI,-81
+oatfront1,burst_1764243667,1,2c:d0:2d:d4:b1:4f:,DIR_WIFI,-84
+oatfront1,burst_1764243667,1,00:27:90:c9:1b:4f:,DIR_WIFI,-85
+oatfront1,burst_1764243667,1,70:e4:22:c0:1a:0f:,DIR_WIFI,-89
+oatfront1,burst_1764243667,1,54:4a:00:5a:84:8f:,DIR_WIFI,-87
+oatfront1,burst_1764243667,1,70:e4:22:97:89:3f:,DIR_WIFI,-82
+oatfront1,burst_1764243667,1,70:e4:22:97:83:d0:,DIR_WIFI,-72
+oatfront1,burst_1764243667,1,54:4a:00:5a:84:80:,DIR_WIFI,-74
+oatfront1,burst_1764243667,1,70:e4:22:97:89:30:,DIR_WIFI,-81
+oatfront1,burst_1764243667,1,70:e4:22:c9:0a:50:,DIR_WIFI,-61
+oatfront1,burst_1764243667,1,2c:d0:2d:d4:b1:40:,DIR_WIFI,-69
+oatfront1,burst_1764243667,1,00:27:90:c9:1b:40:,DIR_WIFI,-61
+oatfront1,burst_1764243667,1,6a:19:21:30:6f:17:,NIT-YAMUNA_MESS,-83
+oatfront1,burst_1764243667,1,72:23:51:a4:d5:1f:,NIT-WiFi_BASE,-84
+oatfront1,burst_1764243667,1,2c:d0:2d:d4:b1:48:,Test,-68
+oatfront1,burst_1764243667,1,00:27:90:c9:1b:48:,Test,-76
+oatfront1,burst_1764243667,1,70:e4:22:c0:1a:08:,Test,-87
+oatfront1,burst_1764243667,1,54:4a:00:5a:84:88:,Test,-77
+oatfront1,burst_1764243667,1,70:e4:22:97:83:d8:,Test,-74
+oatfront1,burst_1764243667,1,70:e4:22:c9:0a:58:,Test,-56
+oatfront1,burst_1764243667,1,70:e4:22:97:89:38:,Test,-75
+oatfront1,burst_1764243667,1,70:e4:22:c0:1a:07:,Test,-83
+oatfront1,burst_1764243667,1,54:4a:00:5a:84:87:,Test,-75
+oatfront1,burst_1764243667,1,70:e4:22:97:89:37:,Test,-78
+oatfront1,burst_1764243667,1,2c:d0:2d:d4:b1:47:,Test,-61
+oatfront1,burst_1764243667,1,70:e4:22:c9:0a:57:,Test,-57
+oatfront1,burst_1764243667,1,00:27:90:c9:1b:47:,Test,-62
+oatfront1,burst_1764243667,1,28:ee:52:ea:64:e1:,RM040,-90
+oatfront1,burst_1764243667,1,dc:ea:e7:b9:15:eb:,Delhi NIT Guest,-78
+oatfront1,burst_1764243667,1,dc:ea:e7:b9:15:ea:,Delhi NIT Student,-79
+oatfront1,burst_1764243667,1,dc:ea:e7:b9:15:e8:,Delhi NIT,-82
+oatfront1,burst_1764243667,1,82:19:21:30:70:2f:,NIT_DH_MESS,-89
+oatfront1,burst_1764243667,1,3c:cd:57:6b:2d:43:,NITD_GH_FF,-90
+oatfront1,burst_1764243667,1,c2:18:03:a2:72:b9:,DIRECT-B9-HP Laser 138fnwAS,-86
+oatfront1,burst_1764243667,1,52:c2:e8:0d:bd:30:,DIRECT-30-HP M233 LaserJet,-65
+oatfront1,burst_1764243667,1,bc:22:28:45:6b:14:,Bliss Paradox,-75
+oatfront1,burst_1764243667,1,c2:18:03:a7:79:ff:,DIRECT-FF-HP Laser 138fnw,-69
+oatfront1,burst_1764243667,1,c2:18:03:a7:79:a5:,DIRECT-A5-HP Laser 138fnw,-82
+oatfront1,burst_1764243667,1,c2:18:03:a2:73:42:,DIRECT-42-HP Laser 138fnw,-69
+oatfront1,burst_1764243667,1,c2:18:03:a2:72:cb:,DIRECT-CB-HP Laser 138fnw,-70
+oatfront1,burst_1764243667,1,c2:18:03:a7:79:f4:,DIRECT-F4-HP LaserAM,-76
+oatfront1,burst_1764243667,2,70:e4:22:c9:0a:57:,NIT-HOSTEL,-58
+oatfront1,burst_1764243667,2,2c:d0:2d:d4:b1:47:,NIT-HOSTEL,-68
+oatfront1,burst_1764243667,2,00:27:90:c9:1b:47:,NIT-HOSTEL,-67
+oatfront1,burst_1764243667,2,70:e4:22:97:83:d7:,NIT-HOSTEL,-81
+oatfront1,burst_1764243667,2,70:e4:22:97:89:37:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,2,10:05:ca:56:82:08:,NIT-HOSTEL,-90
+oatfront1,burst_1764243667,2,70:e4:22:97:83:d8:,NIT-HOSTEL,-71
+oatfront1,burst_1764243667,2,70:e4:22:c0:1a:08:,NIT-HOSTEL,-85
+oatfront1,burst_1764243667,2,54:4a:00:5a:84:88:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,2,70:e4:22:c9:0a:58:,NIT-HOSTEL,-55
+oatfront1,burst_1764243667,2,70:e4:22:97:89:38:,NIT-HOSTEL,-76
+oatfront1,burst_1764243667,2,1c:61:b4:c6:9c:29:,NIT_WIFI,-71
+oatfront1,burst_1764243667,2,70:e4:22:c9:0a:57:,NIT-HOSTEL,-58
+oatfront1,burst_1764243667,2,2c:d0:2d:d4:b1:47:,NIT-HOSTEL,-68
+oatfront1,burst_1764243667,2,00:27:90:c9:1b:47:,NIT-HOSTEL,-67
+oatfront1,burst_1764243667,2,70:e4:22:97:83:d7:,NIT-HOSTEL,-81
+oatfront1,burst_1764243667,2,70:e4:22:97:89:37:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,2,10:05:ca:56:82:08:,NIT-HOSTEL,-90
+oatfront1,burst_1764243667,2,70:e4:22:97:83:d8:,NIT-HOSTEL,-71
+oatfront1,burst_1764243667,2,70:e4:22:c0:1a:08:,NIT-HOSTEL,-85
+oatfront1,burst_1764243667,2,54:4a:00:5a:84:88:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,2,70:e4:22:c9:0a:58:,NIT-HOSTEL,-55
+oatfront1,burst_1764243667,2,70:e4:22:97:89:38:,NIT-HOSTEL,-76
+oatfront1,burst_1764243667,2,70:e4:22:c9:0a:5f:,DIR_WIFI,-83
+oatfront1,burst_1764243667,2,2c:d0:2d:d4:b1:4f:,DIR_WIFI,-81
+oatfront1,burst_1764243667,2,00:27:90:c9:1b:4f:,DIR_WIFI,-81
+oatfront1,burst_1764243667,2,70:e4:22:97:89:3f:,DIR_WIFI,-80
+oatfront1,burst_1764243667,2,70:e4:22:c0:1a:00:,DIR_WIFI,-75
+oatfront1,burst_1764243667,2,70:e4:22:97:83:d0:,DIR_WIFI,-71
+oatfront1,burst_1764243667,2,54:4a:00:5a:84:80:,DIR_WIFI,-75
+oatfront1,burst_1764243667,2,2c:d0:2d:d4:b1:40:,DIR_WIFI,-67
+oatfront1,burst_1764243667,2,70:e4:22:97:89:30:,DIR_WIFI,-79
+oatfront1,burst_1764243667,2,70:e4:22:c9:0a:50:,DIR_WIFI,-62
+oatfront1,burst_1764243667,2,62:19:21:30:7d:7f:,NIT-Wi-Fi_GH_4F,-84
+oatfront1,burst_1764243667,2,3e:cd:57:6b:2d:42:,MiShareWiFi_2D41,-75
+oatfront1,burst_1764243667,2,bc:22:28:45:6b:14:,Bliss Paradox,-76
+oatfront1,burst_1764243667,2,2c:d0:2d:d4:b1:48:,Test,-68
+oatfront1,burst_1764243667,2,00:27:90:c9:1b:48:,Test,-68
+oatfront1,burst_1764243667,2,70:e4:22:c0:1a:08:,Test,-83
+oatfront1,burst_1764243667,2,54:4a:00:5a:84:88:,Test,-78
+oatfront1,burst_1764243667,2,70:e4:22:c9:0a:58:,Test,-57
+oatfront1,burst_1764243667,2,70:e4:22:97:89:38:,Test,-77
+oatfront1,burst_1764243667,2,70:e4:22:97:83:d7:,Test,-80
+oatfront1,burst_1764243667,2,70:e4:22:c0:1a:07:,Test,-81
+oatfront1,burst_1764243667,2,54:4a:00:5a:84:87:,Test,-78
+oatfront1,burst_1764243667,2,2c:d0:2d:d4:b1:47:,Test,-59
+oatfront1,burst_1764243667,2,70:e4:22:c9:0a:57:,Test,-54
+oatfront1,burst_1764243667,2,2c:d0:2d:d4:b1:4e:,NIT-WIFI,-83
+oatfront1,burst_1764243667,2,00:27:90:c9:1b:4e:,NIT-WIFI,-81
+oatfront1,burst_1764243667,2,70:e4:22:c0:1a:0e:,NIT-WIFI,-83
+oatfront1,burst_1764243667,2,54:4a:00:5a:84:8e:,NIT-WIFI,-84
+oatfront1,burst_1764243667,2,70:e4:22:c9:0a:5e:,NIT-WIFI,-78
+oatfront1,burst_1764243667,2,70:e4:22:97:89:3e:,NIT-WIFI,-81
+oatfront1,burst_1764243667,2,70:e4:22:97:83:d1:,NIT-WIFI,-69
+oatfront1,burst_1764243667,2,70:e4:22:c0:1a:01:,NIT-WIFI,-75
+oatfront1,burst_1764243667,2,54:4a:00:5a:84:81:,NIT-WIFI,-75
+oatfront1,burst_1764243667,2,2c:d0:2d:d4:b1:41:,NIT-WIFI,-62
+oatfront1,burst_1764243667,2,70:e4:22:c9:0a:51:,NIT-WIFI,-54
+oatfront1,burst_1764243667,2,dc:ea:e7:b9:15:eb:,Delhi NIT Guest,-79
+oatfront1,burst_1764243667,2,dc:ea:e7:b9:15:ea:,Delhi NIT Student,-80
+oatfront1,burst_1764243667,2,dc:ea:e7:b9:15:e8:,Delhi NIT,-83
+oatfront1,burst_1764243667,2,20:b5:c6:cb:83:78:,JioAirfiberA6,-85
+oatfront1,burst_1764243667,2,30:68:93:6f:e0:79:,TP-Link_E079,-90
+oatfront1,burst_1764243667,2,1c:61:b4:c6:9c:29:,NIT_WIFI,-72
+oatfront1,burst_1764243667,2,42:ed:00:3c:f3:30:,CIA Surveillance Van #234,-95
+oatfront1,burst_1764243667,2,28:ee:52:ea:64:e2:,RM040,-87
+oatfront1,burst_1764243667,2,52:c2:e8:0d:bd:30:,DIRECT-30-HP M233 LaserJet,-65
+oatfront1,burst_1764243667,2,c2:18:03:a2:73:42:,DIRECT-42-HP Laser 138fnw,-67
+oatfront1,burst_1764243667,2,c2:18:03:a7:79:a5:,DIRECT-A5-HP Laser 138fnw,-81
+oatfront1,burst_1764243667,3,70:e4:22:c9:0a:57:,NIT-HOSTEL,-57
+oatfront1,burst_1764243667,3,2c:d0:2d:d4:b1:47:,NIT-HOSTEL,-61
+oatfront1,burst_1764243667,3,00:27:90:c9:1b:47:,NIT-HOSTEL,-73
+oatfront1,burst_1764243667,3,54:4a:00:5a:84:87:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,3,70:e4:22:97:83:d7:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,3,70:e4:22:97:89:37:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,3,70:e4:22:c0:1a:08:,NIT-HOSTEL,-83
+oatfront1,burst_1764243667,3,70:e4:22:97:83:d8:,NIT-HOSTEL,-69
+oatfront1,burst_1764243667,3,54:4a:00:5a:84:88:,NIT-HOSTEL,-77
+oatfront1,burst_1764243667,3,00:27:90:c9:1b:48:,NIT-HOSTEL,-66
+oatfront1,burst_1764243667,3,1c:61:b4:c6:9c:29:,NIT_WIFI,-72
+oatfront1,burst_1764243667,3,2c:d0:2d:d4:b1:4e:,NIT-WIFI,-80
+oatfront1,burst_1764243667,3,00:27:90:c9:1b:4e:,NIT-WIFI,-82
+oatfront1,burst_1764243667,3,70:e4:22:c0:1a:0e:,NIT-WIFI,-84
+oatfront1,burst_1764243667,3,54:4a:00:5a:84:8e:,NIT-WIFI,-84
+oatfront1,burst_1764243667,3,70:e4:22:97:89:3e:,NIT-WIFI,-81
+oatfront1,burst_1764243667,3,70:e4:22:c0:1a:01:,NIT-WIFI,-76
+oatfront1,burst_1764243667,3,70:e4:22:97:83:d1:,NIT-WIFI,-69
+oatfront1,burst_1764243667,3,54:4a:00:5a:84:81:,NIT-WIFI,-76
+oatfront1,burst_1764243667,3,70:e4:22:97:89:31:,NIT-WIFI,-84
+oatfront1,burst_1764243667,3,2c:d0:2d:d4:b1:41:,NIT-WIFI,-59
+oatfront1,burst_1764243667,3,70:e4:22:c9:0a:51:,NIT-WIFI,-55
+oatfront1,burst_1764243667,3,00:27:90:c9:1b:41:,NIT-WIFI,-64
+oatfront1,burst_1764243667,3,2c:d0:2d:d4:b1:4f:,DIR_WIFI,-78
+oatfront1,burst_1764243667,3,70:e4:22:c9:0a:5f:,DIR_WIFI,-82
+oatfront1,burst_1764243667,3,00:27:90:c9:1b:4f:,DIR_WIFI,-83
+oatfront1,burst_1764243667,3,54:4a:00:5a:84:8f:,DIR_WIFI,-85
+oatfront1,burst_1764243667,3,70:e4:22:97:83:df:,DIR_WIFI,-79
+oatfront1,burst_1764243667,3,70:e4:22:97:89:3f:,DIR_WIFI,-80
+oatfront1,burst_1764243667,3,70:e4:22:c0:1a:00:,DIR_WIFI,-76
+oatfront1,burst_1764243667,3,54:4a:00:5a:84:80:,DIR_WIFI,-75
+oatfront1,burst_1764243667,3,70:e4:22:c9:0a:50:,DIR_WIFI,-60
+oatfront1,burst_1764243667,3,2c:d0:2d:d4:b1:40:,DIR_WIFI,-64
+oatfront1,burst_1764243667,3,00:27:90:c9:1b:40:,DIR_WIFI,-67
+oatfront1,burst_1764243667,3,70:e4:22:97:89:30:,DIR_WIFI,-80
+oatfront1,burst_1764243667,3,70:e4:22:c9:0a:57:,NIT-HOSTEL,-57
+oatfront1,burst_1764243667,3,2c:d0:2d:d4:b1:47:,NIT-HOSTEL,-61
+oatfront1,burst_1764243667,3,00:27:90:c9:1b:47:,NIT-HOSTEL,-73
+oatfront1,burst_1764243667,3,54:4a:00:5a:84:87:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,3,70:e4:22:97:83:d7:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,3,70:e4:22:97:89:37:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,3,70:e4:22:c0:1a:08:,NIT-HOSTEL,-83
+oatfront1,burst_1764243667,3,70:e4:22:97:83:d8:,NIT-HOSTEL,-69
+oatfront1,burst_1764243667,3,54:4a:00:5a:84:88:,NIT-HOSTEL,-77
+oatfront1,burst_1764243667,3,00:27:90:c9:1b:48:,NIT-HOSTEL,-66
+oatfront1,burst_1764243667,3,3c:cd:57:6b:2d:42:,NITD_GH_FF,-74
+oatfront1,burst_1764243667,3,bc:22:28:b6:66:00:,CHEMISTRY_LAB,-90
+oatfront1,burst_1764243667,3,2c:d0:2d:d4:b1:48:,Test,-69
+oatfront1,burst_1764243667,3,00:27:90:c9:1b:48:,Test,-71
+oatfront1,burst_1764243667,3,70:e4:22:c0:1a:08:,Test,-84
+oatfront1,burst_1764243667,3,54:4a:00:5a:84:88:,Test,-78
+oatfront1,burst_1764243667,3,70:e4:22:97:83:d8:,Test,-70
+oatfront1,burst_1764243667,3,70:e4:22:97:89:38:,Test,-77
+oatfront1,burst_1764243667,3,70:e4:22:c0:1a:07:,Test,-82
+oatfront1,burst_1764243667,3,70:e4:22:97:83:d7:,Test,-77
+oatfront1,burst_1764243667,3,2c:d0:2d:d4:b1:47:,Test,-57
+oatfront1,burst_1764243667,3,70:e4:22:97:89:37:,Test,-78
+oatfront1,burst_1764243667,3,70:e4:22:c9:0a:57:,Test,-55
+oatfront1,burst_1764243667,3,00:27:90:c9:1b:47:,Test,-68
+oatfront1,burst_1764243667,3,28:ee:52:ea:64:e1:,RM040,-85
+oatfront1,burst_1764243667,3,1c:61:b4:c6:9c:29:,NIT_WIFI,-72
+oatfront1,burst_1764243667,3,dc:ea:e7:b9:15:eb:,Delhi NIT Guest,-80
+oatfront1,burst_1764243667,3,dc:ea:e7:b9:15:e8:,Delhi NIT,-82
+oatfront1,burst_1764243667,3,20:b5:c6:cb:83:78:,JioAirfiberA6,-85
+oatfront1,burst_1764243667,3,82:19:21:30:70:2f:,NIT_DH_MESS,-84
+oatfront1,burst_1764243667,3,3e:cd:57:6b:2d:42:,MiShareWiFi_2D41,-73
+oatfront1,burst_1764243667,3,c6:30:30:ba:a6:4f:,Redmi 13C 5G,-81
+oatfront1,burst_1764243667,3,52:c2:e8:0d:bd:30:,DIRECT-30-HP M233 LaserJet,-64
+oatfront1,burst_1764243667,3,c2:18:03:a7:79:ff:,DIRECT-FF-HP Laser 138fnw,-70
+oatfront1,burst_1764243667,3,c2:18:03:a2:73:42:,DIRECT-42-HP Laser 138fnw,-65
+oatfront1,burst_1764243667,3,c2:18:03:a2:72:cb:,DIRECT-CB-HP Laser 138fnw,-69
+oatfront1,burst_1764243667,4,2c:d0:2d:d4:b1:47:,NIT-HOSTEL,-65
+oatfront1,burst_1764243667,4,00:27:90:c9:1b:47:,NIT-HOSTEL,-69
+oatfront1,burst_1764243667,4,70:e4:22:97:83:d7:,NIT-HOSTEL,-76
+oatfront1,burst_1764243667,4,70:e4:22:c9:0a:57:,NIT-HOSTEL,-57
+oatfront1,burst_1764243667,4,70:e4:22:97:89:37:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,4,70:e4:22:97:83:d8:,NIT-HOSTEL,-72
+oatfront1,burst_1764243667,4,54:4a:00:5a:84:88:,NIT-HOSTEL,-78
+oatfront1,burst_1764243667,4,70:e4:22:c9:0a:58:,NIT-HOSTEL,-74
+oatfront1,burst_1764243667,4,70:e4:22:97:89:38:,NIT-HOSTEL,-75
+oatfront1,burst_1764243667,4,1c:61:b4:c6:9c:29:,NIT_WIFI,-73
+oatfront1,burst_1764243667,4,1c:61:b4:c6:9c:2b:,NIT_WIFI,-85
+oatfront1,burst_1764243667,4,72:23:51:a4:d5:1f:,NIT-WiFi_BASE,-85
+oatfront1,burst_1764243667,4,c2:18:03:a2:72:cb:,DIRECT-CB-HP Laser 138fnw,-67
+oatfront1,burst_1764243667,4,2c:d0:2d:d4:b1:47:,NIT-HOSTEL,-65
+oatfront1,burst_1764243667,4,00:27:90:c9:1b:47:,NIT-HOSTEL,-69
+oatfront1,burst_1764243667,4,70:e4:22:97:83:d7:,NIT-HOSTEL,-76
+oatfront1,burst_1764243667,4,70:e4:22:c9:0a:57:,NIT-HOSTEL,-57
+oatfront1,burst_1764243667,4,70:e4:22:97:89:37:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,4,70:e4:22:97:83:d8:,NIT-HOSTEL,-72
+oatfront1,burst_1764243667,4,54:4a:00:5a:84:88:,NIT-HOSTEL,-78
+oatfront1,burst_1764243667,4,70:e4:22:c9:0a:58:,NIT-HOSTEL,-74
+oatfront1,burst_1764243667,4,70:e4:22:97:89:38:,NIT-HOSTEL,-75
+oatfront1,burst_1764243667,4,2c:d0:2d:d4:b1:48:,Test,-74
+oatfront1,burst_1764243667,4,00:27:90:c9:1b:48:,Test,-67
+oatfront1,burst_1764243667,4,54:4a:00:5a:84:88:,Test,-79
+oatfront1,burst_1764243667,4,70:e4:22:97:83:d8:,Test,-71
+oatfront1,burst_1764243667,4,70:e4:22:97:89:38:,Test,-76
+oatfront1,burst_1764243667,4,70:e4:22:97:83:d7:,Test,-74
+oatfront1,burst_1764243667,4,54:4a:00:5a:84:87:,Test,-80
+oatfront1,burst_1764243667,4,70:e4:22:c9:0a:57:,Test,-55
+oatfront1,burst_1764243667,4,2c:d0:2d:d4:b1:4e:,NIT-WIFI,-82
+oatfront1,burst_1764243667,4,00:27:90:c9:1b:4e:,NIT-WIFI,-83
+oatfront1,burst_1764243667,4,70:e4:22:c0:1a:0e:,NIT-WIFI,-84
+oatfront1,burst_1764243667,4,54:4a:00:5a:84:8e:,NIT-WIFI,-85
+oatfront1,burst_1764243667,4,70:e4:22:97:83:de:,NIT-WIFI,-81
+oatfront1,burst_1764243667,4,70:e4:22:97:89:3e:,NIT-WIFI,-79
+oatfront1,burst_1764243667,4,70:e4:22:97:83:d1:,NIT-WIFI,-72
+oatfront1,burst_1764243667,4,00:27:90:c9:1b:41:,NIT-WIFI,-63
+oatfront1,burst_1764243667,4,2c:d0:2d:d4:b1:41:,NIT-WIFI,-57
+oatfront1,burst_1764243667,4,70:e4:22:c9:0a:51:,NIT-WIFI,-54
+oatfront1,burst_1764243667,4,2c:d0:2d:d4:b1:4f:,DIR_WIFI,-83
+oatfront1,burst_1764243667,4,00:27:90:c9:1b:4f:,DIR_WIFI,-84
+oatfront1,burst_1764243667,4,54:4a:00:5a:84:8f:,DIR_WIFI,-84
+oatfront1,burst_1764243667,4,70:e4:22:c9:0a:5f:,DIR_WIFI,-82
+oatfront1,burst_1764243667,4,70:e4:22:97:89:3f:,DIR_WIFI,-80
+oatfront1,burst_1764243667,4,70:e4:22:97:83:d0:,DIR_WIFI,-73
+oatfront1,burst_1764243667,4,2c:d0:2d:d4:b1:40:,DIR_WIFI,-62
+oatfront1,burst_1764243667,4,70:e4:22:c9:0a:50:,DIR_WIFI,-61
+oatfront1,burst_1764243667,4,1c:61:b4:c6:9c:29:,NIT_WIFI,-74
+oatfront1,burst_1764243667,4,1c:61:b4:c6:9c:2b:,NIT_WIFI,-85
+oatfront1,burst_1764243667,4,28:ee:52:ea:64:e1:,RM040,-85
+oatfront1,burst_1764243667,4,dc:ea:e7:b9:15:ea:,Delhi NIT Student,-82
+oatfront1,burst_1764243667,4,dc:ea:e7:b9:15:e8:,Delhi NIT,-83
+oatfront1,burst_1764243667,4,dc:ea:e7:b9:15:e0:,Delhi NIT,-84
+oatfront1,burst_1764243667,4,20:b5:c6:cb:83:78:,JioAirfiberA6,-85
+oatfront1,burst_1764243667,4,82:19:21:30:70:2f:,NIT_DH_MESS,-84
+oatfront1,burst_1764243667,4,62:19:21:30:7d:7f:,NIT-Wi-Fi_GH_4F,-84
+oatfront1,burst_1764243667,4,72:23:51:a4:d5:1f:,NIT-WiFi_BASE,-85
+oatfront1,burst_1764243667,4,3e:cd:57:6b:2d:42:,MiShareWiFi_2D41,-71
+oatfront1,burst_1764243667,4,3c:cd:57:6b:2d:42:,NITD_GH_FF,-71
+,,,,,
+oatfront1,burst_1764243667,4,52:c2:e8:0d:bd:30:,DIRECT-30-HP M233 LaserJet,-63
+,,,,,
+oatfront1,burst_1764243667,4,c2:18:03:a2:73:42:,DIRECT-42-HP Laser 138fnw,-65
+oatfront1,burst_1764243667,4,c2:18:03:a7:79:ff:,DIRECT-FF-HP Laser 138fnw,-70
+oatfront1,burst_1764243667,5,2c:d0:2d:d4:b1:47:,NIT-HOSTEL,-68
+oatfront1,burst_1764243667,5,54:4a:00:5a:84:87:,NIT-HOSTEL,-82
+oatfront1,burst_1764243667,5,70:e4:22:97:83:d7:,NIT-HOSTEL,-75
+oatfront1,burst_1764243667,5,70:e4:22:c9:0a:57:,NIT-HOSTEL,-58
+oatfront1,burst_1764243667,5,70:e4:22:97:89:37:,NIT-HOSTEL,-82
+oatfront1,burst_1764243667,5,70:e4:22:97:83:d8:,NIT-HOSTEL,-70
+oatfront1,burst_1764243667,5,54:4a:00:5a:84:88:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,5,70:e4:22:c9:0a:58:,NIT-HOSTEL,-70
+oatfront1,burst_1764243667,5,1c:61:b4:c6:9c:2b:,NIT_WIFI,-84
+oatfront1,burst_1764243667,5,1c:61:b4:c6:9c:29:,NIT_WIFI,-73
+oatfront1,burst_1764243667,5,72:23:51:a4:d5:1f:,NIT-WiFi_BASE,-84
+oatfront1,burst_1764243667,5,2c:d0:2d:d4:b1:47:,NIT-HOSTEL,-68
+oatfront1,burst_1764243667,5,54:4a:00:5a:84:87:,NIT-HOSTEL,-82
+oatfront1,burst_1764243667,5,70:e4:22:97:83:d7:,NIT-HOSTEL,-75
+oatfront1,burst_1764243667,5,70:e4:22:c9:0a:57:,NIT-HOSTEL,-58
+oatfront1,burst_1764243667,5,70:e4:22:97:89:37:,NIT-HOSTEL,-82
+oatfront1,burst_1764243667,5,70:e4:22:97:83:d8:,NIT-HOSTEL,-70
+oatfront1,burst_1764243667,5,54:4a:00:5a:84:88:,NIT-HOSTEL,-79
+oatfront1,burst_1764243667,5,70:e4:22:c9:0a:58:,NIT-HOSTEL,-70
+oatfront1,burst_1764243667,5,70:e4:22:c9:0a:58:,Test,-73
+oatfront1,burst_1764243667,5,2c:d0:2d:d4:b1:48:,Test,-77
+oatfront1,burst_1764243667,5,70:e4:22:c0:1a:08:,Test,-85
+oatfront1,burst_1764243667,5,70:e4:22:97:89:38:,Test,-78
+oatfront1,burst_1764243667,5,70:e4:22:c0:1a:07:,Test,-89
+oatfront1,burst_1764243667,5,54:4a:00:5a:84:87:,Test,-83
+oatfront1,burst_1764243667,5,70:e4:22:c9:0a:57:,Test,-61
+oatfront1,burst_1764243667,5,70:e4:22:c9:0a:5e:,NIT-WIFI,-81
+oatfront1,burst_1764243667,5,2c:d0:2d:d4:b1:4e:,NIT-WIFI,-83
+oatfront1,burst_1764243667,5,70:e4:22:97:83:de:,NIT-WIFI,-80
+oatfront1,burst_1764243667,5,70:e4:22:97:89:3e:,NIT-WIFI,-80
+oatfront1,burst_1764243667,5,70:e4:22:97:83:d1:,NIT-WIFI,-73
+oatfront1,burst_1764243667,5,54:4a:00:5a:84:81:,NIT-WIFI,-85
+oatfront1,burst_1764243667,5,70:e4:22:c9:0a:51:,NIT-WIFI,-57
+oatfront1,burst_1764243667,5,2c:d0:2d:d4:b1:41:,NIT-WIFI,-55
+oatfront1,burst_1764243667,5,2c:d0:2d:d4:b1:4f:,DIR_WIFI,-82
+oatfront1,burst_1764243667,5,70:e4:22:c0:1a:0f:,DIR_WIFI,-84
+oatfront1,burst_1764243667,5,54:4a:00:5a:84:8f:,DIR_WIFI,-82
+oatfront1,burst_1764243667,5,70:e4:22:97:83:df:,DIR_WIFI,-80
+oatfront1,burst_1764243667,5,70:e4:22:c9:0a:5f:,DIR_WIFI,-81
+oatfront1,burst_1764243667,5,70:e4:22:97:89:3f:,DIR_WIFI,-82
+oatfront1,burst_1764243667,5,70:e4:22:97:83:d0:,DIR_WIFI,-74
+oatfront1,burst_1764243667,5,54:4a:00:5a:84:80:,DIR_WIFI,-80
+oatfront1,burst_1764243667,5,70:e4:22:97:89:30:,DIR_WIFI,-76
+oatfront1,burst_1764243667,5,70:e4:22:c9:0a:50:,DIR_WIFI,-57
+oatfront1,burst_1764243667,5,2c:d0:2d:d4:b1:40:,DIR_WIFI,-60
+oatfront1,burst_1764243667,5,1c:61:b4:c6:9c:2b:,NIT_WIFI,-84
+oatfront1,burst_1764243667,5,1c:61:b4:c6:9c:29:,NIT_WIFI,-73
+oatfront1,burst_1764243667,5,20:b5:c6:cb:83:78:,JioAirfiberA6,-83
+oatfront1,burst_1764243667,5,82:19:21:30:70:2f:,NIT_DH_MESS,-85
+oatfront1,burst_1764243667,5,62:19:21:30:7d:7f:,NIT-Wi-Fi_GH_4F,-85
+oatfront1,burst_1764243667,5,72:23:51:a4:d5:1f:,NIT-WiFi_BASE,-84
+oatfront1,burst_1764243667,5,3e:cd:57:6b:2d:42:,MiShareWiFi_2D41,-75
+oatfront1,burst_1764243667,5,3c:cd:57:6b:2d:42:,NITD_GH_FF,-72
+oatfront1,burst_1764243667,5,bc:22:28:45:6b:14:,Bliss Paradox,-86
+,,,,,
+oatfront1,burst_1764243667,5,46:fa:66:a8:2e:38:,DIRECT-38-HP M233 LaserJet,-82
+,,,,,
+,,,,,
+oatfront1,burst_1764243667,5,c2:18:03:a2:73:42:,DIRECT-42-HP Laser 138fnw,-63
