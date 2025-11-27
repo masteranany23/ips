@@ -10,3 +10,6 @@ venv/
 .venv
 *.log
 .DS_Store
+prediction_api.py
+test_direct_prediction.py
+model_train.py

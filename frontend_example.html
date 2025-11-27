@@ -169,25 +169,31 @@
 
     <script>
         // Configure your API URL here
-        const API_URL = 'https://YOUR_APP.onrender.com';  // Change this!
-        // For local development: const API_URL = 'http://localhost:8000';
+        const API_URL = 'http://localhost:8000';  // For local development
+        // For production: const API_URL = 'https://YOUR_APP.onrender.com';
         
         let ws = null;
         let reconnectInterval = null;
 
         function connectWebSocket() {
             const wsUrl = API_URL.replace('https://', 'wss://').replace('http://', 'ws://');
+            console.log('Connecting to WebSocket:', `${wsUrl}/ws`);
             ws = new WebSocket(`${wsUrl}/ws`);
             
             ws.onopen = () => {
                 console.log('WebSocket connected');
-                updateStatus('connected', '🟢 Connected - Waiting for ESP32 data...');
-                clearInterval(reconnectInterval);
+                updateStatus('connected', 'Connected - Waiting for ESP data...');
+                if (reconnectInterval) {
+                    clearInterval(reconnectInterval);
+                    reconnectInterval = null;
+                }
                 
                 // Send heartbeat every 30 seconds
-                setInterval(() => {
+                const heartbeat = setInterval(() => {
                     if (ws.readyState === WebSocket.OPEN) {
                         ws.send('ping');
+                    } else {
+                        clearInterval(heartbeat);
                     }
                 }, 30000);
             };
@@ -200,18 +206,20 @@
             
             ws.onerror = (error) => {
                 console.error('WebSocket error:', error);
-                updateStatus('disconnected', '🔴 Connection error');
+                updateStatus('disconnected', 'Connection error');
             };
             
             ws.onclose = () => {
                 console.log('WebSocket disconnected');
-                updateStatus('disconnected', '🔴 Disconnected - Reconnecting...');
+                updateStatus('disconnected', 'Disconnected - Reconnecting...');
                 
                 // Auto-reconnect after 3 seconds
-                reconnectInterval = setInterval(() => {
-                    console.log('Attempting to reconnect...');
-                    connectWebSocket();
-                }, 3000);
+                if (!reconnectInterval) {
+                    reconnectInterval = setInterval(() => {
+                        console.log('Attempting to reconnect...');
+                        connectWebSocket();
+                    }, 3000);
+                }
             };
         }
         
@@ -250,7 +258,7 @@
             const timestamp = new Date(data.timestamp).toLocaleString();
             document.getElementById('timestamp').textContent = `Last update: ${timestamp}`;
             
-            updateStatus('connected', '🟢 Live - Receiving updates');
+            updateStatus('connected', 'Live - Receiving updates');
         }
         
         // Fallback: Poll /latest endpoint if WebSocket not supported
@@ -258,21 +266,42 @@
             try {
                 const response = await fetch(`${API_URL}/latest`);
                 const data = await response.json();
-                if (data.data) {
+                console.log('Polled data:', data);
+                if (data && data.location) {
+                    updateUI(data);
+                } else if (data.data) {
                     updateUI(data.data);
                 }
             } catch (error) {
                 console.error('Polling error:', error);
+                updateStatus('disconnected', 'API connection failed');
+            }
+        }
+        
+        // Test API connection first
+        async function testConnection() {
+            try {
+                const response = await fetch(`${API_URL}/health`);
+                const data = await response.json();
+                console.log('API health check:', data);
+                if (data.status === 'healthy') {
+                    console.log('API is reachable, starting WebSocket...');
+                    if ('WebSocket' in window) {
+                        connectWebSocket();
+                    } else {
+                        updateStatus('disconnected', 'WebSocket not supported - Using polling');
+                        setInterval(pollLatest, 2000);
+                    }
+                }
+            } catch (error) {
+                console.error('API not reachable:', error);
+                updateStatus('disconnected', 'Cannot connect to API at ' + API_URL);
+                console.log('Make sure app.py is running on port 8000');
             }
         }
         
         // Initialize
-        if ('WebSocket' in window) {
-            connectWebSocket();
-        } else {
-            updateStatus('disconnected', '⚠️ WebSocket not supported - Using polling');
-            setInterval(pollLatest, 2000);  // Poll every 2 seconds
-        }
+        testConnection();
     </script>
 </body>
 </html>
