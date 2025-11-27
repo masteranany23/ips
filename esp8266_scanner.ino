@@ -1,14 +1,15 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
+#include <WiFiClientSecure.h>
 #include <ArduinoJson.h>
 
 // CONFIG
 const char* WIFI_SSID = "daredevil";
 const char* WIFI_PASS = "qsig9884";
-const char* SERVER_URL = "http://10.98.28.84:8000/predict";
+const char* SERVER_URL = "https://ips-u8u0.onrender.com/predict";
 const unsigned long SEND_INTERVAL_MS = 3000UL;
 
-WiFiClient client;
+WiFiClientSecure client;
 unsigned long lastSend = 0;
 
 void connectWiFi() {
@@ -40,6 +41,11 @@ void setup() {
   delay(1000);
   Serial.println("\n\nWiFi Indoor Positioning - ESP8266");
   Serial.println("===================================");
+  
+  // Disable SSL certificate validation (for ease of use)
+  // In production, you should use proper certificate validation
+  client.setInsecure();
+  
   connectWiFi();
 }
 
@@ -89,9 +95,9 @@ void loop() {
   
   Serial.printf("Payload size: %d bytes\n", payload.length());
 
-  // HTTP POST
+  // HTTP POST with HTTPS
   HTTPClient http;
-  http.begin(client, SERVER_URL);
+  http.begin(client, SERVER_URL);  // Use WiFiClientSecure
   http.addHeader("Content-Type", "application/json");
   http.setTimeout(15000);
 
@@ -142,9 +148,6 @@ void loop() {
     Serial.printf("  WiFi: %d\n", WiFi.status());
     Serial.printf("  Gateway: %s\n", WiFi.gatewayIP().toString().c_str());
     Serial.printf("  RSSI: %d dBm\n", WiFi.RSSI());
-    Serial.println("\nError -1 = Connection failed");
-    Serial.println("Check: Server running? Correct IP? Port open?");
-    Serial.println("Try: ping 10.98.28.84 from another device");
   }
   
   http.end();
