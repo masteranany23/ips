@@ -1,0 +1,57 @@
+{
+  "buildingId": "TRI01",
+  "floorId": "1",
+  "width": 1.0,
+  "height": 1.0,
+  "backgroundImage": null,
+
+  "nodes": [
+    { "id": "TRI01F1_CORNER_A", "label": "Corner A", "x": 0.10, "y": 0.90 },
+    { "id": "TRI01F1_CORNER_B", "label": "Corner B", "x": 0.90, "y": 0.90 },
+    { "id": "TRI01F1_CORNER_C", "label": "Corner C", "x": 0.50, "y": 0.10 },
+
+    { "id": "TRI01F1_OAT", "label": "Open Air Theatre", "x": 0.50, "y": 0.60 },
+
+    { "id": "TRI01F1_ROOM_106", "label": "106", "x": 0.18, "y": 0.74 },
+    { "id": "TRI01F1_ROOM_105", "label": "105", "x": 0.26, "y": 0.58 },
+    { "id": "TRI01F1_ROOM_104", "label": "104", "x": 0.34, "y": 0.42 },
+    { "id": "TRI01F1_ROOM_103", "label": "103", "x": 0.42, "y": 0.26 },
+
+
+    { "id": "TRI01F1_ROOM_122", "label": "122", "x": 0.82, "y": 0.74 },
+    { "id": "TRI01F1_ROOM_123", "label": "123", "x": 0.74, "y": 0.58 },
+    { "id": "TRI01F1_ROOM_124", "label": "124", "x": 0.66, "y": 0.42 },
+    { "id": "TRI01F1_ROOM_125", "label": "125", "x": 0.58, "y": 0.26 },
+
+    { "id": "TRI01F1_ROOM_115", "label": "115", "x": 0.20, "y": 0.88 },
+    { "id": "TRI01F1_ROOM_116", "label": "116", "x": 0.35, "y": 0.88 },
+    { "id": "TRI01F1_ROOM_117", "label": "117", "x": 0.48, "y": 0.88 },
+    { "id": "TRI01F1_ROOM_118", "label": "118", "x": 0.65, "y": 0.88 },
+    { "id": "TRI01F1_ROOM_119", "label": "119", "x": 0.80, "y": 0.88 }
+  ],
+
+  "edges": [
+    { "from": "TRI01F1_CORNER_A", "to": "TRI01F1_CORNER_B" },
+    { "from": "TRI01F1_CORNER_B", "to": "TRI01F1_CORNER_C" },
+    { "from": "TRI01F1_CORNER_C", "to": "TRI01F1_CORNER_A" },
+
+    { "from": "TRI01F1_CORNER_A", "to": "TRI01F1_ROOM_103" },
+    { "from": "TRI01F1_ROOM_103", "to": "TRI01F1_ROOM_104" },
+    { "from": "TRI01F1_ROOM_104", "to": "TRI01F1_ROOM_105" },
+    { "from": "TRI01F1_ROOM_105", "to": "TRI01F1_ROOM_106" },
+    { "from": "TRI01F1_ROOM_106", "to": "TRI01F1_CORNER_C" },
+
+    { "from": "TRI01F1_CORNER_B", "to": "TRI01F1_ROOM_122" },
+    { "from": "TRI01F1_ROOM_122", "to": "TRI01F1_ROOM_123" },
+    { "from": "TRI01F1_ROOM_123", "to": "TRI01F1_ROOM_124" },
+    { "from": "TRI01F1_ROOM_124", "to": "TRI01F1_ROOM_125" },
+    { "from": "TRI01F1_ROOM_125", "to": "TRI01F1_CORNER_C" },
+
+    { "from": "TRI01F1_CORNER_A", "to": "TRI01F1_ROOM_115" },
+    { "from": "TRI01F1_ROOM_115", "to": "TRI01F1_ROOM_116" },
+    { "from": "TRI01F1_ROOM_116", "to": "TRI01F1_ROOM_117" },
+    { "from": "TRI01F1_ROOM_117", "to": "TRI01F1_ROOM_118" },
+    { "from": "TRI01F1_ROOM_118", "to": "TRI01F1_ROOM_119" },
+    { "from": "TRI01F1_ROOM_119", "to": "TRI01F1_CORNER_B" }
+  ]
+}

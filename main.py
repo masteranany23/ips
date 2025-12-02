@@ -6,12 +6,10 @@ import datetime
 
 # --- CONFIGURATION ---
 # How many consecutive scans to take per location (Burst)
-SCANS_PER_BURST = 5
+SCANS_PER_BURST = 10
 # Seconds to wait for Windows to refresh the cache (Critical for accuracy)
 SCAN_INTERVAL = 4
 FILENAME = 'wifi_training_data.csv'
-# Set this to your laptop model (e.g., "Dell_XPS", "Lenovo_Thinkpad")
-DEVICE_ID = "Laptop_Surveyor"
 
 
 def init_wifi():
@@ -79,8 +77,8 @@ def perform_scan(iface):
 def save_to_csv(location, burst_data, scan_index, burst_id):
     file_exists = os.path.isfile(FILENAME)
 
-    # Order of columns for the CSV
-    headers = ["Timestamp", "Device_ID", "Location_Label", "Burst_ID", "Scan_Index", "BSSID", "SSID", "RSSI"]
+    # Order of columns for the CSV (removed Timestamp and Device_ID)
+    headers = ["Location_Label", "Burst_ID", "Scan_Index", "BSSID", "SSID", "RSSI"]
 
     with open(FILENAME, mode='a', newline='', encoding='utf-8') as file:
         writer = csv.DictWriter(file, fieldnames=headers)
@@ -88,13 +86,10 @@ def save_to_csv(location, burst_data, scan_index, burst_id):
         if not file_exists:
             writer.writeheader()
 
-        timestamp = int(time.time())  # Unix timestamp
-
+        # removed timestamp generation
         row_count = 0
         for item in burst_data:
             writer.writerow({
-                "Timestamp": timestamp,
-                "Device_ID": DEVICE_ID,
                 "Location_Label": location,
                 "Burst_ID": burst_id,
                 "Scan_Index": scan_index,
