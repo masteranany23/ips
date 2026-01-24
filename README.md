@@ -555,8 +555,8 @@ This project is licensed under the MIT License - see LICENSE file for details.
 Created with ❤️ by a passionate developer
 
 **Connect**:
-- GitHub: [Your Profile](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
+- GitHub: [Anany Mishra](https://github.com/masteranany23)
+- LinkedIn: [Anany Mishra](www.linkedin.com/in/mishra-anany)
 
 ---
 
