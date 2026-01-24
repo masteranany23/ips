@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.indoormaps.data.*
+import com.example.indoormaps.data.prediction.PredictionService
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
@@ -46,6 +47,27 @@ class LocationViewModel(application: Application) : AndroidViewModel(application
         Log.d(TAG, "========================================")
         Log.d(TAG, "LocationViewModel INITIALIZING")
         Log.d(TAG, "========================================")
+        
+        // TEST: Check if assets exist
+        try {
+            val assets = application.assets.list("")?.toList() ?: emptyList()
+            val hasModel = assets.contains("wifi_positioning.tflite")
+            val hasMetadata = assets.contains("model_metadata.json")
+            
+            Log.e(TAG, "ASSETS CHECK:")
+            Log.e(TAG, "  Has model: $hasModel")
+            Log.e(TAG, "  Has metadata: $hasMetadata")
+            Log.e(TAG, "  Total assets: ${assets.size}")
+            
+            if (!hasModel) {
+                Log.e(TAG, "❌ MODEL FILE MISSING!")
+            }
+            if (!hasMetadata) {
+                Log.e(TAG, "❌ METADATA FILE MISSING!")
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to check assets", e)
+        }
         
         viewModelScope.launch {
             Log.d(TAG, "Starting to collect scanResults flow...")
@@ -94,14 +116,22 @@ class LocationViewModel(application: Application) : AndroidViewModel(application
             return
         }
         
-        // Run BOTH predictions IN PARALLEL for speed
-        val localJob = viewModelScope.launch {
+        // Run LOCAL prediction
+        viewModelScope.launch {
             val startTime = System.currentTimeMillis()
             try {
                 val localResult = modelInference.predict(scan.accessPoints)
                 _localPrediction.value = localResult
                 val elapsed = System.currentTimeMillis() - startTime
+                
                 Log.d(TAG, "Local prediction: ${localResult?.location} (${elapsed}ms)")
+                
+                // Emit to PredictionService for map highlighting
+                localResult?.location?.let { loc ->
+                    Log.d(TAG, "Emitting local prediction to PredictionService: $loc")
+                    PredictionService.emitPrediction(loc)
+                }
+                
             } catch (e: Exception) {
                 Log.e(TAG, "Local prediction failed", e)
                 _localPrediction.value = PredictionResult(
@@ -115,9 +145,12 @@ class LocationViewModel(application: Application) : AndroidViewModel(application
             }
         }
         
-        val remoteJob = viewModelScope.launch {
+        // Run REMOTE prediction
+        viewModelScope.launch {
             val startTime = System.currentTimeMillis()
             try {
+                _errorMessage.value = "Sending $apCount APs to server..."
+                
                 val remoteResult = apiClient.sendScanToServer(scan.accessPoints)
                 val elapsed = System.currentTimeMillis() - startTime
                 
@@ -125,26 +158,23 @@ class LocationViewModel(application: Application) : AndroidViewModel(application
                     _remotePrediction.value = remoteResult
                     val confidencePct = (remoteResult.confidence * 100).toInt()
                     
-                    // Show both predictions in status
                     val localLoc = _localPrediction.value?.location ?: "..."
                     _errorMessage.value = "Local: $localLoc | Remote: ${remoteResult.location}"
                     
                     Log.d(TAG, "Remote prediction: ${remoteResult.location} ($confidencePct%) (${elapsed}ms)")
+                    
+                    // Emit to PredictionService for map highlighting
+                    Log.d(TAG, "Emitting remote prediction to PredictionService: ${remoteResult.location}")
+                    PredictionService.emitPrediction(remoteResult.location)
+                    
                 } else {
                     _errorMessage.value = "API offline - using local only"
+                    Log.e(TAG, "API returned null result")
                 }
             } catch (e: Exception) {
                 Log.e(TAG, "API error", e)
                 _errorMessage.value = "API offline - using local only"
             }
-        }
-        
-        // Optional: Log total processing time
-        viewModelScope.launch {
-            localJob.join()
-            remoteJob.join()
-            val totalTime = System.currentTimeMillis() - scanTime
-            Log.d(TAG, "Total processing time: ${totalTime}ms")
         }
     }
     

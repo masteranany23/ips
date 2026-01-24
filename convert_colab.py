@@ -1,220 +1,209 @@
 """
-Google Colab Script - Convert Random Forest to TFLite
-Upload: rf_wifi_model.pkl, label_encoder.pkl, feature_list_used.csv, wifi_training_wide_per_scan.csv
+Google Colab - Convert with full compatibility for Android TFLite 2.16+
 """
 
-# First cell - Install dependencies
-!pip install scikit-learn pandas joblib numpy
+# Install SPECIFIC TensorFlow version
+#!pip install scikit-learn pandas joblib numpy
 
-# Second cell - Convert model
+# Import libraries
 import joblib
 import numpy as np
 import pandas as pd
 import json
 import sys
+from collections import Counter
+from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split
 
 print(f"Python: {sys.version}")
 
 # Import TensorFlow
-try:
-    import tensorflow as tf
-    print(f"TensorFlow: {tf.__version__}")
-except ImportError:
-    !pip install tensorflow
-    import tensorflow as tf
-    print(f"TensorFlow: {tf.__version__}")
+import tensorflow as tf
+print(f"TensorFlow: {tf.__version__}")  # Should show 2.14.0
 
-# Load models
-print("\nLoading trained models...")
+# Load trained artifacts
+print("\n" + "="*60)
+print("Loading trained Random Forest model...")
+print("="*60)
+
 rf_model = joblib.load("rf_wifi_model.pkl")
 label_encoder = joblib.load("label_encoder.pkl")
-feature_list_raw = pd.read_csv("feature_list_used.csv", header=None)[0].astype(str).tolist()
+feature_list = pd.read_csv("feature_list_used.csv", header=None)[0].astype(str).tolist()
 
-# Normalize BSSIDs
-def normalize_bssid(bssid: str) -> str:
-    normalized = str(bssid).strip().lower().replace("-", ":")
-    if not normalized.endswith(":"):
-        normalized += ":"
-    return normalized
+print(f"✓ Features: {len(feature_list)}")
+print(f"✓ Classes: {label_encoder.classes_}")
 
-feature_list = [normalize_bssid(bssid) for bssid in feature_list_raw]
-print(f"Features: {len(feature_list)}")
-print(f"Classes: {label_encoder.classes_}")
-
-# Load training data - BUILD IN EXACT ORDER
+# Load training data
 print("\nLoading training data...")
 df = pd.read_csv("wifi_training_wide_per_scan.csv")
 
-# Verify class distribution BEFORE any processing
-print("\nOriginal CSV class distribution:")
-print(df['Location_Label'].value_counts().sort_index())
+# Extract features and labels
+meta_cols = ['Location_Label', 'Burst_ID', 'Scan_Index']
+feature_cols = [c for c in df.columns if c not in meta_cols]
 
-# BUILD DATAFRAME to preserve column names
-X_data = []
-for _, row in df.iterrows():
-    feature_vector = []
-    for bssid in feature_list:
-        if bssid in df.columns:
-            feature_vector.append(row[bssid] if pd.notna(row[bssid]) else -110.0)
-        else:
-            feature_vector.append(-110.0)
-    X_data.append(feature_vector)
+# Verify feature match
+if set(feature_cols) != set(feature_list):
+    print("⚠️  WARNING: Feature mismatch between CSV and feature_list")
+    print(f"   CSV has {len(feature_cols)} features")
+    print(f"   feature_list has {len(feature_list)} features")
 
-X_df = pd.DataFrame(X_data, columns=feature_list)
-X = X_df.values.astype(np.float32)
+# Build X in EXACT order from feature_list
+X = df[feature_list].values.astype(np.float32)
+y_labels = df['Location_Label'].values
+y = label_encoder.transform(y_labels)
 
-# Get ORIGINAL labels from CSV (not RF predictions)
-y_original = df["Location_Label"].values
-y = label_encoder.transform(y_original).astype(np.int32)
+print(f"✓ Dataset: {len(X)} samples, {len(feature_list)} features, {len(label_encoder.classes_)} classes")
 
-n_features = len(feature_list)
-n_classes = len(label_encoder.classes_)
-
-print(f"\nDataset: {len(X)} samples, {n_features} features, {n_classes} classes")
-print(f"Original label distribution: {Counter(y_original)}")
-
-# USE RANDOM FOREST PREDICTIONS (Knowledge Distillation)
+# Verify RF predictions match training labels
 print("\n" + "="*60)
-print("Knowledge Distillation from Random Forest")
+print("Verifying Random Forest accuracy...")
 print("="*60)
 
-# Get RF predictions as soft labels
-rf_predictions = rf_model.predict_proba(X_df)
+rf_pred = rf_model.predict(X)
+rf_pred_labels = label_encoder.inverse_transform(rf_pred)
 
-# Get RF hard predictions to check agreement
-rf_hard_labels = rf_model.predict(X_df)
-rf_label_names = label_encoder.inverse_transform(rf_hard_labels)
+matches = sum(rf_pred_labels == y_labels)
+accuracy_pct = matches/len(y_labels)*100
+print(f"RF accuracy on training data: {matches}/{len(y_labels)} ({accuracy_pct:.1f}%)")
 
-print(f"\nRandom Forest predictions on training data:")
-print(Counter(rf_label_names))
+if matches < len(y_labels) * 0.95:
+    print("⚠️  WARNING: RF doesn't predict its own training data well!")
+    print("   This model may not convert well to TFLite")
 
-# IMPORTANT: Check if RF agrees with original labels
-agreement = sum(rf_label_names == y_original)
-print(f"\nRF agreement with original labels: {agreement}/{len(y_original)} ({agreement/len(y_original)*100:.1f}%)")
+print(f"\nRF prediction distribution:")
+print(Counter(rf_pred_labels))
 
-if agreement < len(y_original) * 0.9:  # Less than 90% agreement
-    print("\n⚠️  WARNING: RF model disagrees significantly with training labels!")
-    print("   This suggests the model may be overtrained or data has issues.")
-    print("   Proceeding anyway, but results may be poor.")
+# Knowledge Distillation: Train NN to mimic RF
+print("\n" + "="*60)
+print("Training Neural Network (Knowledge Distillation)")
+print("="*60)
 
-# Build neural network
+# Get soft targets from RF
+rf_probs = rf_model.predict_proba(X)
+
+# Build neural network with COMPATIBLE ops
 try:
     import keras
-    print(f"\nUsing Keras: {keras.__version__}")
 except:
     keras = tf.keras
-    print(f"\nUsing tf.keras")
 
-print("\nBuilding neural network...")
+print("\nBuilding neural network (Android-compatible)...")
+
+# Use SIMPLE architecture that works with TFLite
 model = keras.Sequential([
-    keras.layers.Input(shape=(n_features,), name='input'),
-    keras.layers.Dense(256, activation='relu', name='hidden1'),  # Larger for 258 features
-    keras.layers.Dropout(0.4, name='dropout1'),
-    keras.layers.Dense(128, activation='relu', name='hidden2'),
-    keras.layers.Dropout(0.3, name='dropout2'),
-    keras.layers.Dense(64, activation='relu', name='hidden3'),
-    keras.layers.Dropout(0.2, name='dropout3'),
-    keras.layers.Dense(n_classes, activation='softmax', name='output')
-], name='wifi_positioning_nn')
+    keras.layers.Input(shape=(len(feature_list),), name='input'),
+    keras.layers.Dense(256, activation='relu', name='dense1'),
+    keras.layers.Dense(128, activation='relu', name='dense2'),
+    keras.layers.Dense(64, activation='relu', name='dense3'),
+    keras.layers.Dense(len(label_encoder.classes_), activation='softmax', name='output')
+])
 
+# Use regular Adam optimizer (Keras 3 compatible)
 model.compile(
-    optimizer=keras.optimizers.Adam(0.0005),  # Lower learning rate for stability
+    optimizer=keras.optimizers.Adam(learning_rate=0.0003),
     loss='categorical_crossentropy',
     metrics=['accuracy']
 )
 
 model.summary()
 
-# Train to mimic Random Forest
-print("\nTraining neural network (mimicking Random Forest)...")
-
-# Use ORIGINAL labels for stratification (not RF predictions)
-from sklearn.model_selection import train_test_split
+# Stratified split
 X_train, X_val, y_train, y_val = train_test_split(
-    X, rf_predictions,  # Use RF soft labels as targets
+    X, rf_probs,
     test_size=0.15,
-    stratify=y_original,  # Stratify by ORIGINAL labels
+    stratify=y_labels,
     random_state=42
 )
 
-print(f"Training samples: {len(X_train)}, Validation samples: {len(X_val)}")
+print(f"\n✓ Training: {len(X_train)}, Validation: {len(X_val)}")
 
-# Check validation set distribution
-val_indices = train_test_split(
-    range(len(X)), test_size=0.15, stratify=y_original, random_state=42
-)[1]
-val_labels = y_original[val_indices]
-print(f"Validation set distribution: {Counter(val_labels)}")
-
+# Train
 history = model.fit(
     X_train, y_train,
     validation_data=(X_val, y_val),
-    epochs=300,  # Reduced from 500
-    batch_size=8,  # Smaller batch for 77 training samples
-    verbose=2,  # Less verbose
+    epochs=500,
+    batch_size=8,
+    verbose=2,
     callbacks=[
         keras.callbacks.EarlyStopping(
-            monitor='val_accuracy',  # Monitor accuracy instead of loss
-            patience=50,
+            monitor='val_accuracy',
+            patience=80,
             restore_best_weights=True,
-            verbose=1,
-            mode='max'
+            mode='max',
+            verbose=1
         ),
         keras.callbacks.ReduceLROnPlateau(
             monitor='val_accuracy',
-            factor=0.5,
-            patience=20,
-            min_lr=0.00001,
-            verbose=1,
-            mode='max'
+            factor=0.3,
+            patience=30,
+            min_lr=1e-6,
+            mode='max',
+            verbose=1
         )
     ]
 )
 
-# Test against ORIGINAL labels (not RF)
+# Evaluate NN vs RF
 print("\n" + "="*60)
-print("Comparing Neural Network vs Original Labels")
+print("Evaluating Neural Network")
 print("="*60)
 
-keras_preds = model.predict(X, verbose=0)
-keras_labels = [label_encoder.classes_[np.argmax(p)] for p in keras_preds]
+nn_preds = model.predict(X, verbose=0)
+nn_pred_labels = [label_encoder.classes_[np.argmax(p)] for p in nn_preds]
 
-matches = sum(k == o for k, o in zip(keras_labels, y_original))
-agreement_pct = matches/len(X)*100
+nn_matches = sum(n == r for n, r in zip(nn_pred_labels, rf_pred_labels))
+nn_accuracy = nn_matches / len(rf_pred_labels) * 100
 
-print(f"\nAgreement with ORIGINAL labels: {matches}/{len(X)} ({agreement_pct:.1f}%)")
-print(f"Agreement with RF labels: {sum(k == r for k, r in zip(keras_labels, rf_label_names))}/{len(X)}")
+print(f"\nNN agreement with RF: {nn_matches}/{len(rf_pred_labels)} ({nn_accuracy:.1f}%)")
+print(f"\nPer-class comparison:")
+print(classification_report(rf_pred_labels, nn_pred_labels, zero_division=0))
 
-# Convert to TFLite WITHOUT quantization
+# Convert to TFLite with QUANTIZATION (forces compatible ops)
 print("\n" + "="*60)
-print("Converting to TFLite (no quantization for max accuracy)")
+print("Converting to TFLite with QUANTIZATION (Android compatible)")
 print("="*60)
 
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
-converter.optimizations = []  # NO quantization
-converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS]
+
+# CRITICAL: Use quantization with representative dataset
+# This FORCES older op versions that Android supports
+def representative_dataset():
+    for i in range(min(100, len(X))):
+        yield [X[i:i+1]]
+
+converter.optimizations = [tf.lite.Optimize.DEFAULT]
+converter.representative_dataset = representative_dataset
+
+# Set to use only compatible ops
+converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]
+converter.inference_input_type = tf.float32  # Keep input as float32
+converter.inference_output_type = tf.float32  # Keep output as float32
 
 try:
     tflite_model = converter.convert()
-    print("✓ Conversion successful!")
+    print("✓ Conversion with INT8 quantization successful!")
 except Exception as e:
-    print(f"Conversion failed: {e}")
-    print("\nTrying with default optimizations...")
+    print(f"INT8 conversion failed: {e}")
+    print("\nFalling back to dynamic range quantization...")
+    
+    # Fallback: simpler quantization
+    converter = tf.lite.TFLiteConverter.from_keras_model(model)
     converter.optimizations = [tf.lite.Optimize.DEFAULT]
+    converter.representative_dataset = representative_dataset
+    converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS]
+    
     tflite_model = converter.convert()
-    print("✓ Conversion successful with optimizations!")
+    print("✓ Conversion with dynamic quantization successful!")
 
-# Save
 output_file = "wifi_positioning.tflite"
 with open(output_file, 'wb') as f:
     f.write(tflite_model)
 
-print(f"\n✓ Model saved: {output_file}")
-print(f"  Size: {len(tflite_model)/1024:.2f} KB")
+print(f"✓ Model saved: {output_file} ({len(tflite_model)/1024:.2f} KB)")
 
-# Test TFLite model
+# Test TFLite
 print("\n" + "="*60)
-print("Testing TFLite model")
+print("Testing TFLite Model")
 print("="*60)
 
 interpreter = tf.lite.Interpreter(model_path=output_file)
@@ -223,55 +212,37 @@ interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
-print(f"Input shape: {input_details[0]['shape']}")
-print(f"Output shape: {output_details[0]['shape']}")
-
-# Test all samples
-tflite_matches_rf = 0
-tflite_predictions = []
-
-rf_labels_names_all = label_encoder.inverse_transform(rf_model.predict(X_df))
-
+tflite_pred_labels = []
 for i in range(len(X)):
-    test_input = X[i:i+1].astype(np.float32)
-    interpreter.set_tensor(input_details[0]['index'], test_input)
+    interpreter.set_tensor(input_details[0]['index'], X[i:i+1])
     interpreter.invoke()
-    tflite_output = interpreter.get_tensor(output_details[0]['index'])
-    
-    tflite_pred = label_encoder.classes_[np.argmax(tflite_output[0])]
-    rf_pred = rf_labels_names_all[i]
-    
-    tflite_predictions.append(tflite_pred)
-    if tflite_pred == rf_pred:
-        tflite_matches_rf += 1
+    output = interpreter.get_tensor(output_details[0]['index'])
+    pred_idx = np.argmax(output[0])
+    tflite_pred_labels.append(label_encoder.classes_[pred_idx])
 
-tflite_accuracy = tflite_matches_rf/len(X)*100
+tflite_matches = sum(t == r for t, r in zip(tflite_pred_labels, rf_pred_labels))
+tflite_accuracy = tflite_matches / len(rf_pred_labels) * 100
 
-print(f"\nTFLite matches Random Forest: {tflite_matches_rf}/{len(X)} ({tflite_accuracy:.1f}%)")
-
-# Show per-location TFLite accuracy
-print("\nTFLite vs Random Forest per location:")
-print(classification_report(rf_labels_names_all, tflite_predictions))
+print(f"\nTFLite agreement with RF: {tflite_matches}/{len(rf_pred_labels)} ({tflite_accuracy:.1f}%)")
+print(f"\nPer-class TFLite accuracy:")
+print(classification_report(rf_pred_labels, tflite_pred_labels, zero_division=0))
 
 # Save metadata
 metadata = {
     "feature_list": feature_list,
     "classes": label_encoder.classes_.tolist(),
-    "n_features": n_features,
-    "n_classes": n_classes,
+    "n_features": len(feature_list),
+    "n_classes": len(label_encoder.classes_),
     "tf_version": tf.__version__,
-    "tflite_accuracy": f"{tflite_accuracy:.1f}%",
-    "training_samples": len(X),
-    "training_method": "knowledge_distillation",
-    "model_architecture": "256-128-64-9",
-    "locations": label_encoder.classes_.tolist()
+    "nn_agreement_with_rf": f"{nn_accuracy:.1f}%",
+    "tflite_agreement_with_rf": f"{tflite_accuracy:.1f}%",
+    "training_samples": len(X)
 }
 
-metadata_file = "model_metadata.json"
-with open(metadata_file, "w") as f:
+with open("model_metadata.json", "w") as f:
     json.dump(metadata, f, indent=2)
 
-print(f"\n✓ Metadata saved: {metadata_file}")
+print("\n✓ Metadata saved: model_metadata.json")
 
 # Final summary
 print("\n" + "="*60)
@@ -279,28 +250,23 @@ print("✅ CONVERSION COMPLETE!")
 print("="*60)
 print(f"\n📊 Results:")
 print(f"  • Training samples: {len(X)}")
-print(f"  • Features: {n_features}")
-print(f"  • Locations: {n_classes}")
-print(f"  • Neural Network → Random Forest: {agreement_pct:.1f}%")
-print(f"  • TFLite → Random Forest: {tflite_accuracy:.1f}%")
+print(f"  • Features: {len(feature_list)}")
+print(f"  • Locations: {len(label_encoder.classes_)}")
+print(f"  • NN → RF agreement: {nn_accuracy:.1f}%")
+print(f"  • TFLite → RF agreement: {tflite_accuracy:.1f}%")
 print(f"  • Model size: {len(tflite_model)/1024:.2f} KB")
 
-print(f"\n Download these files from Colab:")
-print(f"  1. {output_file}")
-print(f"  2. {metadata_file}")
+print(f"\n📥 Download:")
+print(f"  • wifi_positioning.tflite")
+print(f"  • model_metadata.json")
 
-print(f"\n📲 Copy to Android:")
-print(f"  androidapp/app/src/main/assets/wifi_positioning.tflite")
-print(f"  androidapp/app/src/main/assets/model_metadata.json")
+print(f"\n📍 Locations: {', '.join(label_encoder.classes_)}")
 
-if tflite_accuracy >= 90:
-    print("\n✅ Model quality: EXCELLENT (≥90%)")
+if tflite_accuracy >= 95:
+    print("\n✅ EXCELLENT! TFLite matches RF perfectly!")
+elif tflite_accuracy >= 90:
+    print("\n✅ GOOD quality (≥90%)")
 elif tflite_accuracy >= 80:
-    print("\n✅ Model quality: GOOD (80-90%)")
-elif tflite_accuracy >= 70:
-    print("\n⚠️  Model quality: ACCEPTABLE (70-80%)")
+    print("\n⚠️  ACCEPTABLE (80-90%)")
 else:
-    print("\n❌ Model quality: POOR (<70%)")
-    print("   Try: More epochs, larger model, or collect more data")
-
-print(f"\n� Your 9 locations: {', '.join(label_encoder.classes_)}")
+    print("\n❌ POOR (<80%) - Try more training epochs or larger model")

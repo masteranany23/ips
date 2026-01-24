@@ -3,6 +3,7 @@ package com.example.indoormaps
 import android.Manifest
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
@@ -14,6 +15,10 @@ import com.example.indoormaps.navigation.AppNavigation
 import com.example.indoormaps.ui.theme.IndoorMapsTheme
 
 class MainActivity : ComponentActivity() {
+    
+    companion object {
+        private const val TAG = "MainActivity"
+    }
     
     // Permission launcher
     private val permissionLauncher = registerForActivityResult(
@@ -29,6 +34,32 @@ class MainActivity : ComponentActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        Log.d(TAG, "========================================")
+        Log.d(TAG, "Indoor Maps App Starting...")
+        Log.d(TAG, "========================================")
+        
+        // Check assets
+        try {
+            val assets = assets.list("")?.toList() ?: emptyList()
+            Log.d(TAG, "Assets folder contains ${assets.size} files:")
+            assets.forEach { Log.d(TAG, "  - $it") }
+            
+            val hasModel = assets.contains("wifi_positioning.tflite")
+            val hasMetadata = assets.contains("model_metadata.json")
+            
+            Log.d(TAG, "Has TFLite model: $hasModel")
+            Log.d(TAG, "Has metadata: $hasMetadata")
+            
+            if (!hasModel) {
+                Log.e(TAG, "⚠️ TFLite model NOT FOUND in assets!")
+            }
+            if (!hasMetadata) {
+                Log.e(TAG, "⚠️ Metadata NOT FOUND in assets!")
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Error checking assets", e)
+        }
         
         setContent {
             IndoorMapsTheme {

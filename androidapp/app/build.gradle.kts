@@ -72,8 +72,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
     
-    // TensorFlow Lite - Use LATEST version
-    implementation("org.tensorflow:tensorflow-lite:2.16.1")
+    // TensorFlow Lite - Use LATEST version (matches Colab TF 2.19+)
+    implementation("org.tensorflow:tensorflow-lite:2.16.1")  // Revert to latest
     implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
     
     // Coroutines

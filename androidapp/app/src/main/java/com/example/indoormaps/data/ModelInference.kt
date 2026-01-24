@@ -5,14 +5,11 @@ import android.util.Log
 import org.json.JSONObject
 import org.tensorflow.lite.Interpreter
 import java.io.FileInputStream
-import java.nio.ByteBuffer
-import java.nio.ByteOrder
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
 
 /**
- * Handles local machine learning inference using TensorFlow Lite
- * Provides offline location prediction based on WiFi signals
+ * TensorFlow Lite model inference for WiFi positioning
  */
 class ModelInference(private val context: Context) {
     
@@ -20,201 +17,212 @@ class ModelInference(private val context: Context) {
         private const val TAG = "ModelInference"
         private const val MODEL_FILE = "wifi_positioning.tflite"
         private const val METADATA_FILE = "model_metadata.json"
-        private const val MISSING_RSSI = -110f
     }
     
     private var interpreter: Interpreter? = null
-    private lateinit var metadata: ModelMetadata
-    
-    // Feature mapping for fast lookup
-    private val featureIndexMap = mutableMapOf<String, Int>()
-    
+    private var featureList: List<String> = emptyList()
+    private var classes: List<String> = emptyList()
     private var isInitialized = false
     
     init {
         try {
+            Log.d(TAG, "========================================")
+            Log.d(TAG, "Initializing ModelInference...")
+            Log.d(TAG, "========================================")
+            
             loadModel()
             loadMetadata()
-            buildFeatureIndexMap()
+            
             isInitialized = true
-            Log.d(TAG, "Model initialized successfully")
+            Log.d(TAG, "✅ Model initialized successfully")
+            Log.d(TAG, "  Features: ${featureList.size}")
+            Log.d(TAG, "  Classes: ${classes.size}")
+            Log.d(TAG, "========================================")
+            
         } catch (e: Exception) {
-            Log.e(TAG, "Failed to initialize model", e)
+            Log.e(TAG, "❌ Failed to initialize model", e)
+            Log.e(TAG, "Error type: ${e.javaClass.simpleName}")
+            Log.e(TAG, "Error message: ${e.message}")
+            e.printStackTrace()
             isInitialized = false
         }
     }
     
     private fun loadModel() {
         try {
-            // Check if model file exists
-            val assetFiles = context.assets.list("") ?: emptyArray()
+            Log.d(TAG, "Loading model from assets: $MODEL_FILE")
+            
+            // Check if file exists in assets
+            val assetFiles = context.assets.list("")?.toList() ?: emptyList()
+            Log.d(TAG, "Assets folder contains ${assetFiles.size} files:")
+            assetFiles.take(10).forEach { Log.d(TAG, "  - $it") }
+            
             if (!assetFiles.contains(MODEL_FILE)) {
-                throw Exception("Model file not found in assets. Available files: ${assetFiles.joinToString()}")
+                throw IllegalStateException("Model file not found in assets: $MODEL_FILE")
             }
             
-            val modelBuffer = loadModelFile(MODEL_FILE)
+            // Load model file
+            val modelBuffer = loadModelFile()
+            Log.d(TAG, "Model buffer loaded: ${modelBuffer.capacity()} bytes")
+            
+            // Create interpreter with options
             val options = Interpreter.Options().apply {
                 setNumThreads(4)
+                setUseNNAPI(false)  // Disable for compatibility
             }
+            
             interpreter = Interpreter(modelBuffer, options)
-            Log.d(TAG, "TFLite model loaded successfully")
+            Log.d(TAG, "✓ TFLite interpreter created")
+            
+            // Log tensor details
+            try {
+                val inputTensor = interpreter!!.getInputTensor(0)
+                val outputTensor = interpreter!!.getOutputTensor(0)
+                
+                Log.d(TAG, "Input tensor shape: ${inputTensor.shape().contentToString()}")
+                Log.d(TAG, "Output tensor shape: ${outputTensor.shape().contentToString()}")
+            } catch (e: Exception) {
+                Log.w(TAG, "Could not get tensor info: ${e.message}")
+            }
+            
         } catch (e: Exception) {
-            Log.e(TAG, "Error loading TFLite model: ${e.message}", e)
+            Log.e(TAG, "Failed to load model", e)
             throw e
+        }
+    }
+    
+    private fun loadModelFile(): MappedByteBuffer {
+        return context.assets.openFd(MODEL_FILE).use { fileDescriptor ->
+            FileInputStream(fileDescriptor.fileDescriptor).use { inputStream ->
+                val fileChannel = inputStream.channel
+                val startOffset = fileDescriptor.startOffset
+                val declaredLength = fileDescriptor.declaredLength
+                fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
+            }
         }
     }
     
     private fun loadMetadata() {
         try {
-            // Check if metadata file exists
-            val assetFiles = context.assets.list("") ?: emptyArray()
-            if (!assetFiles.contains(METADATA_FILE)) {
-                throw Exception("Metadata file not found in assets. Available files: ${assetFiles.joinToString()}")
+            Log.d(TAG, "Loading metadata from assets: $METADATA_FILE")
+            
+            val json = context.assets.open(METADATA_FILE).bufferedReader().use { it.readText() }
+            Log.d(TAG, "Metadata JSON loaded (${json.length} chars)")
+            
+            val metadata = JSONObject(json)
+            
+            // Parse feature list
+            val featuresArray = metadata.getJSONArray("feature_list")
+            featureList = List(featuresArray.length()) { i ->
+                featuresArray.getString(i)
+            }
+            Log.d(TAG, "✓ Loaded ${featureList.size} features")
+            
+            // Parse classes
+            val classesArray = metadata.getJSONArray("classes")
+            classes = List(classesArray.length()) { i ->
+                classesArray.getString(i)
+            }
+            Log.d(TAG, "✓ Loaded ${classes.size} classes:")
+            Log.d(TAG, "  $classes")
+            
+            // Log accuracy if available
+            if (metadata.has("tflite_accuracy")) {
+                Log.d(TAG, "Model accuracy: ${metadata.getString("tflite_accuracy")}")
             }
             
-            val json = context.assets.open(METADATA_FILE)
-                .bufferedReader()
-                .use { it.readText() }
-            
-            val jsonObject = JSONObject(json)
-            
-            val featureArray = jsonObject.getJSONArray("feature_list")
-            val classArray = jsonObject.getJSONArray("classes")
-            
-            val features = mutableListOf<String>()
-            for (i in 0 until featureArray.length()) {
-                features.add(featureArray.getString(i))
-            }
-            
-            val classes = mutableListOf<String>()
-            for (i in 0 until classArray.length()) {
-                classes.add(classArray.getString(i))
-            }
-            
-            metadata = ModelMetadata(
-                featureList = features,
-                classes = classes,
-                nFeatures = jsonObject.getInt("n_features"),
-                nClasses = jsonObject.getInt("n_classes")
-            )
-            
-            Log.d(TAG, "Metadata loaded: ${metadata.nFeatures} features, ${metadata.nClasses} classes")
         } catch (e: Exception) {
-            Log.e(TAG, "Error loading metadata: ${e.message}", e)
+            Log.e(TAG, "Failed to load metadata", e)
             throw e
         }
     }
     
-    private fun buildFeatureIndexMap() {
-        metadata.featureList.forEachIndexed { index, bssid ->
-            featureIndexMap[bssid] = index
-        }
-    }
-    
-    private fun loadModelFile(modelPath: String): MappedByteBuffer {
-        val fileDescriptor = context.assets.openFd(modelPath)
-        val inputStream = FileInputStream(fileDescriptor.fileDescriptor)
-        val fileChannel = inputStream.channel
-        val startOffset = fileDescriptor.startOffset
-        val declaredLength = fileDescriptor.declaredLength
-        return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
-    }
-    
     fun predict(accessPoints: List<AccessPoint>): PredictionResult? {
         if (!isInitialized) {
-            Log.e(TAG, "Model not initialized")
+            Log.e(TAG, "Cannot predict - model not initialized")
+            return null
+        }
+        
+        if (interpreter == null) {
+            Log.e(TAG, "Cannot predict - interpreter is null")
             return null
         }
         
         try {
-            val features = buildFeatureVector(accessPoints)
-            val probabilities = runInference(features)
-            return processResults(probabilities, accessPoints.size)
+            // Build feature vector
+            val inputVector = FloatArray(featureList.size) { -110f }
+            
+            var matchedAPs = 0
+            accessPoints.forEach { ap ->
+                val bssid = normalizeBssid(ap.bssid)
+                val index = featureList.indexOf(bssid)
+                if (index >= 0) {
+                    inputVector[index] = ap.rssi.toFloat()
+                    matchedAPs++
+                }
+            }
+            
+            Log.d(TAG, "Predicting: ${accessPoints.size} APs, matched $matchedAPs/${featureList.size} features")
+            
+            // Run inference
+            val input = Array(1) { inputVector }
+            val output = Array(1) { FloatArray(classes.size) }
+            
+            interpreter!!.run(input, output)
+            
+            // Get predictions
+            val probabilities = output[0]
+            val maxIndex = probabilities.indices.maxByOrNull { probabilities[it] } ?: 0
+            val confidence = probabilities[maxIndex]
+            val predictedClass = classes[maxIndex]
+            
+            // Get top 3
+            val top3 = probabilities.indices
+                .sortedByDescending { probabilities[it] }
+                .take(3)
+                .map { classes[it] to probabilities[it] }
+            
+            Log.d(TAG, "✓ Prediction: $predictedClass (${(confidence * 100).toInt()}%)")
+            Log.d(TAG, "  Top 3: ${top3.map { "${it.first}:${(it.second*100).toInt()}%" }}")
+            
+            return PredictionResult(
+                location = predictedClass,
+                confidence = confidence,
+                top3 = top3,
+                matchedAPs = matchedAPs,
+                totalAPs = accessPoints.size,
+                source = PredictionSource.LOCAL
+            )
+            
         } catch (e: Exception) {
             Log.e(TAG, "Prediction failed", e)
             return null
         }
     }
     
-    private fun buildFeatureVector(accessPoints: List<AccessPoint>): FloatArray {
-        val features = FloatArray(metadata.nFeatures) { MISSING_RSSI }
-        var matchedCount = 0
-        
-        accessPoints.forEach { ap ->
-            val normalizedBssid = if (ap.bssid.endsWith(":")) {
-                ap.bssid
-            } else {
-                "${ap.bssid}:"
-            }
-            
-            val index = featureIndexMap[normalizedBssid]
-            if (index != null) {
-                features[index] = ap.rssi.toFloat()
-                matchedCount++
-            }
+    private fun normalizeBssid(bssid: String): String {
+        var normalized = bssid.lowercase().replace("-", ":")
+        if (!normalized.endsWith(":")) {
+            normalized += ":"
         }
-        
-        Log.d(TAG, "Feature vector built: $matchedCount/${accessPoints.size} APs matched")
-        return features
-    }
-    
-    private fun runInference(features: FloatArray): FloatArray {
-        val inputBuffer = ByteBuffer.allocateDirect(features.size * 4).apply {
-            order(ByteOrder.nativeOrder())
-            features.forEach { putFloat(it) }
-            rewind()
-        }
-        
-        val outputBuffer = ByteBuffer.allocateDirect(metadata.nClasses * 4).apply {
-            order(ByteOrder.nativeOrder())
-        }
-        
-        interpreter?.run(inputBuffer, outputBuffer)
-        
-        outputBuffer.rewind()
-        val probabilities = FloatArray(metadata.nClasses)
-        outputBuffer.asFloatBuffer().get(probabilities)
-        
-        return probabilities
-    }
-    
-    private fun processResults(probabilities: FloatArray, totalAPs: Int): PredictionResult {
-        val maxIndex = probabilities.indices.maxByOrNull { probabilities[it] } ?: 0
-        val predictedLocation = metadata.classes[maxIndex]
-        val confidence = probabilities[maxIndex]
-        
-        val top3 = probabilities.indices
-            .sortedByDescending { probabilities[it] }
-            .take(3)
-            .map { metadata.classes[it] to probabilities[it] }
-        
-        Log.d(TAG, "Prediction: $predictedLocation (${confidence * 100}%)")
-        
-        return PredictionResult(
-            location = predictedLocation,
-            confidence = confidence,
-            top3 = top3,
-            matchedAPs = calculateMatchedAPs(totalAPs),
-            totalAPs = totalAPs,
-            source = PredictionSource.LOCAL
-        )
-    }
-    
-    private fun calculateMatchedAPs(totalAPs: Int): Int {
-        return minOf(totalAPs, metadata.nFeatures)
+        return normalized
     }
     
     fun getModelInfo(): String {
-        return if (isInitialized) {
-            "Model: ${metadata.nFeatures} features, ${metadata.nClasses} locations"
+        return if (isInitialized && classes.isNotEmpty()) {
+            "Local TFLite: ${classes.size} locations (${featureList.size} features)"
         } else {
-            "Model not initialized"
+            "Local model: Not initialized ❌"
         }
     }
     
     fun close() {
-        interpreter?.close()
-        interpreter = null
-        Log.d(TAG, "Model interpreter closed")
+        try {
+            interpreter?.close()
+            interpreter = null
+            Log.d(TAG, "Model closed")
+        } catch (e: Exception) {
+            Log.e(TAG, "Error closing model", e)
+        }
     }
 }

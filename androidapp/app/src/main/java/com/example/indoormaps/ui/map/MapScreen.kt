@@ -44,7 +44,7 @@ fun MapScreen(
                 title = {
                     Column {
                         Text(
-                            currentMap?.let { "${it.buildingId} - Floor ${it.floorId}" } 
+                            currentMap?.let { "${it.buildingId} - ${it.floorId}" } 
                                 ?: "Indoor Map"
                         )
                         if (isScanning) {

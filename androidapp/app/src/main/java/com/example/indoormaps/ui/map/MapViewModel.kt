@@ -10,6 +10,7 @@ import com.example.indoormaps.data.map.MapRepository
 import com.example.indoormaps.data.prediction.PredictionService
 import com.example.indoormaps.ui.LocationViewModel
 import com.example.indoormaps.ui.LocationViewModelProvider
+import com.example.indoormaps.utils.PredictionMapping
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
@@ -106,38 +107,22 @@ class MapViewModel(application: Application) : AndroidViewModel(application) {
     
     /**
      * Map prediction location ID to actual map node
-     * This function handles the manual mapping between prediction IDs and map node IDs
+     * Uses PredictionMapping for manual mapping
      */
     private fun mapPredictionToNode(predictionId: String) {
         Log.d(TAG, "Mapping prediction ID: $predictionId")
         
-        // Manual mapping table between prediction IDs and map node IDs
-        val mappedNodeId = when (predictionId.lowercase()) {
-            // Map prediction IDs to actual node IDs in tri01_f1.json
-            "p1405" -> "TRI01F1_ROOM_103"
-            "p1407" -> "TRI01F1_ROOM_104"
-            "messdh" -> "TRI01F1_ROOM_105"
-            "mini118" -> "TRI01F1_ROOM_106"
-            "mini122" -> "TRI01F1_ROOM_122"
-            "oatfront1" -> "TRI01F1_OAT"
-            
-            // If already matches a node ID pattern, try direct search
-            else -> {
-                // Try to find by suffix or contains match
-                val currentMapNodes = _currentMap.value?.nodes ?: emptyList()
-                currentMapNodes.find { 
-                    it.id.contains(predictionId, ignoreCase = true) ||
-                    it.label.contains(predictionId, ignoreCase = true)
-                }?.id
-            }
-        }
+        // Use PredictionMapping helper
+        val mappedNodeId = PredictionMapping.mapPredictionToNode(predictionId)
         
         if (mappedNodeId != null) {
-            Log.d(TAG, "Mapped $predictionId -> $mappedNodeId")
+            Log.d(TAG, "✓ Mapped $predictionId -> $mappedNodeId")
             handlePrediction(mappedNodeId)
         } else {
-            Log.w(TAG, "No mapping found for prediction: $predictionId")
-            _errorMessage.value = "Location not found: $predictionId (add mapping in MapViewModel)"
+            // Log available mappings for debugging
+            Log.w(TAG, "❌ No mapping found for: $predictionId")
+            Log.w(TAG, "Available mappings: ${PredictionMapping.getSupportedLocations()}")
+            _errorMessage.value = "Location not mapped: $predictionId"
         }
     }
     
